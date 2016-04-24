@@ -5,3 +5,8 @@
 # Compiled Files #
 ################
 *.abz
+
+# IDE Files #
+################
+*.iml
+.idea/
