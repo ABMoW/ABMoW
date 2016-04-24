@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="gatling" name="Gatling Cannon" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <unit id="dreadnough" name="Dreadnought" description="Dwarf Dreadnought" cost="200." squadname="Dreadnought" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="4"/>
+    <statval stat="honours" value="8"/>
+    <linkref id="flagship"/>
+    <link option="gatling" index="0"></link>
+    <tag group="race" tag="dwarves"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <unit id="monitor" name="Monitor" description="Dwarf Monitor" cost="50." textcost="150" squadname="Monitor Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="3"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="dwarves"/>
+    </unit>
+  <unit id="nautilus" name="Nautilus" description="Dwarven Nautilus" cost="75." squadname="Nautilus" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="3"/>
+    <tag group="Group" tag="Independ"/>
+    <tag group="race" tag="dwarves"/>
+    </unit>
+  <unit id="gyrocopter" name="Gyrocopter" description="Dwarven Gyrocopter" cost="25." textcost="75" squadname="Gyrocopter Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="1"/>
+    <statval stat="move" value="18"/>
+    <statval stat="wounds" value="1"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="dwarves"/>
+    </unit>
+  <unit id="warballoon" name="War Balloon" description="Dwarven War Balloon" cost="25." textcost="75" squadname="War Balloon Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="dwarves"/>
+    </unit>
+  <unit id="ironclad" name="Ironclad" cost="150." squadname="Ironclad" idtag="yes" statset="shipStats" startsize="1">
+    <statval stat="crew" value="3"/>
+    <statval stat="honours" value="6"/>
+    <link option="gatling" index="0"></link>
+    <tag group="race" tag="dwarves"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="minIroncld" message="You must have one Ironclad in the Fleet" summary="Minimum Ironclads">
+    <test>roster.dwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.ironclad] >= 1)]]></valid>
+    </rule>
+  <rule id="minDreadnt" message="You must have one Dreadnought in the Fleet" summary="Minimum Dreadnoughts">
+    <test>roster.dwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.dreadnough] >= 1)]]></valid>
+    </rule>
+  <rule id="maxDreadnt" message="You may only have one Dreadnought for every Ironclad in the Fleet" summary="Maximum Dreadnoughts">
+    <test>roster.dwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.dreadnough] <= this.tagcount[unitid.ironclad])]]></valid>
+    </rule>
+  <rule id="maxGyrocpt" message="You may only have one Squadron of Gyrocopters for every Ship of the Line Squadron in the fleet" summary="Maximum Gyrocopters">
+    <test>roster.dwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.gyrocopter] <= this.tagcount[Group.ShipOTLine])]]></valid>
+    </rule>
+  <rule id="maxWarblln" message="You may only have one Squadron of War Balloons for every Ship of the Line Squadron in the fleet" summary="Maximum War Balloons">
+    <test>roster.dwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.warballoon] <= this.tagcount[Group.ShipOTLine])]]></valid>
+    </rule>
+  </document>

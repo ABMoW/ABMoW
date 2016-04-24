@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="rocketBatt" name="Rocket Battery" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <unit id="grtLevellr" name="Great Leveller Battlebarge" cost="150." squadname="Great Leveller Battlebarge" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="4"/>
+    <statval stat="honours" value="6"/>
+    <link option="rocketBatt" index="0"></link>
+    <tag group="race" tag="chDwarves"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <unit id="hullDestry" name="Hull-destroyer" cost="50." textcost="150" squadname="Hull-destroyer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="2"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="chDwarves"/>
+    </unit>
+  <unit id="thundrRoll" name="Thunder-roller" cost="50." textcost="150" squadname="Thunder-roller Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="2"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="chDwarves"/>
+    </unit>
+  <unit id="thundrfire" name="Thunderfire Battlebarge" cost="150." squadname="Thunderfire Battlebarge" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="4"/>
+    <statval stat="honours" value="6"/>
+    <linkref id="flagship"/>
+    <linkref id="chWizard"/>
+    <link option="rocketBatt" index="0"></link>
+    <tag group="Group" tag="MenOWar"/>
+    <tag group="race" tag="chDwarves"/>
+    </unit>
+  <unit id="grtTaurus" name="Great Taurus Rider" cost="50." squadname="Great Taurus Rider" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="2"/>
+    <statval stat="move" value="18"/>
+    <statval stat="wounds" value="3"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="chDwarves"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="minHullDes" message="Must include at least one squadron of three Hull-destroyers" summary="Minimum Hull-destroyers">
+    <test>roster.chDwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.hullDestry] >= 1)]]></valid>
+    </rule>
+  <rule id="minThunder" message="Must include at least one squadron of three Thunder-rollers" summary="Minimum Thunder-rollers">
+    <test>roster.chDwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.thundrRoll] >= 1)]]></valid>
+    </rule>
+  <rule id="maxThndrfr" message="May only have 1 Thundefire Battlebarge for each Ship of the Line Squadron, not counting the flagship" summary="Maximum Thunderfire Battlebarges">
+    <test>roster.chDwarves</test>
+    <valid><![CDATA[validif (tagcount[unitid.thundrfire] <= 1 + tagcount[Group.ShipOTLine])]]></valid>
+    </rule>
+  <rule id="maxGLevllr" message="May only have 1 Great Leveller Battlebarge for each Thundefire Battlebarge" summary="Maximum Great Leveller Battlebarges">
+    <test>roster.chDwarves</test>
+    <valid><![CDATA[validif (tagcount[unitid.grtLevellr] <= tagcount[unitid.thundrfire])]]></valid>
+    </rule>
+  <rule id="minGLevllr" message="Must include at least one Great Leveller Battlebarge" summary="Minimum Great Leveller Battlebarge">
+    <test>roster.chDwarves</test>
+    <valid><![CDATA[validif (tagcount[unitid.grtLevellr] >= 1)]]></valid>
+    </rule>
+  <rule id="minThndrfr" message="Must include at least one Thunderfire Battlebarge" summary="Minimum Thunderfire Battlebarge">
+    <test>roster.chDwarves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.thundrfire] >= 1)]]></valid>
+    </rule>
+  </document>

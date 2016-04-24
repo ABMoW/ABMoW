@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <tagset id="monster">
+    <tag group="Group" tag="Monsters"/>
+    <tag group="Group" tag="Monsters"/>
+    </tagset>
+  <unit id="sea_dragon" name="Sea Dragon" cost="75." squadname="Sea Dragon" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="2 d6"/>
+    <statval stat="save" value="4+"/>
+    <statval stat="tohit" value="4+"/>
+    <statval stat="wounds" value="4"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="triton" name="Triton" cost="100." squadname="Triton" idtag="yes" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="4"/>
+    <statval stat="move" value="2 d6"/>
+    <statval stat="save" value="5+"/>
+    <statval stat="tohit" value="4+"/>
+    <statval stat="wounds" value="4"/>
+    <tagref id="monster"/>
+    <member>!(roster.darkElves | roster.orcs | gnRoster.isChaos)</member>
+    </unit>
+  <unit id="behemoth" name="Behemoth" cost="50." squadname="Behemoth" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="2"/>
+    <statval stat="move" value="3 d6"/>
+    <statval stat="save" value="6+"/>
+    <statval stat="tohit" value="5+"/>
+    <statval stat="wounds" value="3"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="elemental" name="Sea Elemental" cost="100." squadname="Sea Elemental" idtag="yes" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="4"/>
+    <statval stat="move" value="3 d6"/>
+    <statval stat="save" value="5+"/>
+    <statval stat="tohit" value="5+"/>
+    <statval stat="wounds" value="3"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="gargantuan" name="Gargantuan" cost="75." squadname="Gargantuan" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="2 d6"/>
+    <statval stat="save" value="5+"/>
+    <statval stat="tohit" value="5+"/>
+    <statval stat="wounds" value="4"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="kraken" name="Kraken" cost="50." squadname="Kraken" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="2"/>
+    <statval stat="move" value="2 d6"/>
+    <statval stat="save" value="5+"/>
+    <statval stat="tohit" value="4+"/>
+    <statval stat="wounds" value="4"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="leviathan" name="Black Leviathan" cost="100." squadname="Black Leviathan" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="4"/>
+    <statval stat="move" value="3 d6"/>
+    <statval stat="save" value="4+"/>
+    <statval stat="tohit" value="Variable"/>
+    <statval stat="wounds" value="6"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="megaladon" name="Megaladon" cost="50." squadname="Megaladon" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="2 d6"/>
+    <statval stat="save" value="5+"/>
+    <statval stat="tohit" value="4+"/>
+    <statval stat="wounds" value="4"/>
+    <tagref id="monster"/>
+    </unit>
+  <unit id="promethean" name="Promethean" cost="75." squadname="Promethean" statset="seamonster" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="3 d6"/>
+    <statval stat="save" value="4+"/>
+    <statval stat="tohit" value="4+"/>
+    <statval stat="wounds" value="2"/>
+    <tagref id="monster"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="elemental" message="May only have one Sea Elemental per 1000 pts in the Fleet" summary="Maximum Sea Elementals">
+    <test/>
+    <valid><![CDATA[validif ( this.tagcount[unitid.elemental] <= round(roster.usersize/1000,0,-1))]]></valid>
+    </rule>
+  <rule id="triton" message="May only have one Triton per 1000 pts in the Fleet" summary="Maximum Tritons">
+    <test/>
+    <valid><![CDATA[validif ( this.tagcount[unitid.triton] <= round(roster.usersize/1000,0,-1))]]></valid>
+    </rule>
+  </document>

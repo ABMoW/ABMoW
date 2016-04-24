@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Extension">
+  <extover isunit="yes" entity="_Global_" index="0" group="race" empty="yes">
+    <condition>roster.dwarves</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="dwarves"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="1" group="race" empty="yes">
+    <condition>roster.elves</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="elves"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="2" group="race" empty="yes">
+    <condition>roster.darkElves</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="darkElves"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="3" group="race" empty="yes">
+    <condition>roster.orcs</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="orcs"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="4" group="race" empty="yes">
+    <condition>gnRoster.isChaos</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="plague"/>
+    <tagover id="khorne"/>
+    <tagover id="nurgle"/>
+    <tagover id="slaanesh"/>
+    <tagover id="tzeentch"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="5" group="race" empty="yes">
+    <condition>roster.chDwarves</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="chDwarves"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="7" group="race" empty="yes">
+    <condition>roster.bretonnian</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="bretonnian"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="8" group="race" empty="yes">
+    <condition>roster.pirates</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="pirates"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="9" group="race" empty="yes">
+    <condition>roster.skaven</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="skaven"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="10" group="race" empty="yes">
+    <condition>roster.norse</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="norse"/>
+    </extover>
+  <extover isunit="yes" entity="_Global_" index="6" group="race" empty="yes">
+    <condition>roster.empire</condition>
+    <candidate>Group.Monsters</candidate>
+    <tagover id="empire"/>
+    </extover>
+  </document>

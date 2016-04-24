@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="archers" name="Archer Regiment" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <unit id="corsair" name="Corsair" cost="100." textcost="300" squadname="Corsair Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="3"/>
+    <statval stat="honours" value="4"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="bretonnian"/>
+    </unit>
+  <unit id="galleon" name="Galleon" cost="150." squadname="Galleon" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="4"/>
+    <statval stat="honours" value="6"/>
+    <linkref id="flagship"/>
+    <link option="archers" index="0"></link>
+    <tag group="race" tag="bretonnian"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <unit id="buccaneer" name="Buccaneer" cost="25." textcost="75" squadname="Buccaneer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="bretonnian"/>
+    </unit>
+  <unit id="pegasus" name="Pegasus Rider" cost="25." textcost="75" squadname="Pegasus Rider Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="1"/>
+    <statval stat="move" value="18"/>
+    <statval stat="wounds" value="2"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="bretonnian"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="minCorsair" message="Must include at least one squadron of three Corsairs" summary="Minimum Corsairs">
+    <test>roster.bretonnian</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.corsair] >= 1)]]></valid>
+    </rule>
+  <rule id="minBuccanr" message="Must include at least one squadron of three Buccaneers" summary="Minimum Buccaneers">
+    <test>roster.bretonnian</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.buccaneer] >= 1)]]></valid>
+    </rule>
+  <rule id="maxBuccanr" message="May only have 2 Buccaneers squadrons for each Galleon and each Corsair squadron" summary="Maximum Buccaneers">
+    <test>roster.bretonnian</test>
+    <valid><![CDATA[var cnt as number
+var others as number
+
+cnt = this.tagcount[unitid.buccaneer] 
+others = this.tagcount[unitid.corsair]*2 + this.tagcount[unitid.galleon]*2
+
+validif (cnt <= others)]]></valid>
+    </rule>
+  </document>

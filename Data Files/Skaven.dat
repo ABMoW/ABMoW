@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <linkset id="skCrew">
+    <link option="assassin" display="104" index="4"></link>
+    <link option="clanrats" display="101" rangemax="100" index="1">
+      <exclref id="clanrats"/>
+      </link>
+    <link option="ratOgres" display="103" index="5">
+      <exclref id="ratOgres"/>
+      <live>Group.MenOWar</live>
+      </link>
+    <link option="ratOgres" display="103" rangemax="3" costtype="single" index="3">
+      <exclref id="ratOgres"/>
+      <live>Group.ShipOTLine</live>
+      </link>
+    <link option="slaves" display="100" rangemax="100" index="0">
+      <exclref id="slaves"/>
+      </link>
+    <link option="stormVermn" display="102" rangemax="100" index="2">
+      <exclref id="stormVermn"/>
+      </link>
+    </linkset>
+  <linkset id="greyseer">
+    <link option="gnSpace" priority="422" index="3"></link>
+    <link option="gnHeader" name="{macro color1} -- Grey Seer --{text 010101}" priority="423" index="4"></link>
+    <link option="wrlckChamp" index="2"></link>
+    <link option="wrlckMastr" index="1"></link>
+    <live>gnTags.isFlagship</live>
+    </linkset>
+  <option id="clanrats" name="Clanrats" abbrev="" category="option" priority="0" cost="0" textcost=" ">
+    <evaluate>var x as number
+var n as number
+for n = 1 to unit.option[clanrats].selection
+x = unit.assign[skTags.clanrat]
+next
+
+~ max Should be max + current slave tags - total of slave tags
+unit.stat[maxClanrat] = round(roster.usersize/100,0,-1)*2
+
+unit.option[slaves].enablement = 0
+unit.option[stormVermn].enablement = 0</evaluate>
+    </option>
+  <option id="firethrowr" name="Firethrower" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <option id="stormVermn" name="Storm Vermin" abbrev="" category="option" priority="0" cost="0" textcost=" ">
+    <evaluate>var x as number
+var n as number
+for n = 1 to unit.option[stormVermn].selection
+x = unit.assign[skTags.stormVermn]
+next
+
+~ max Should be max + current slave tags - total of slave tags
+unit.stat[maxSVermin] = round(roster.usersize/200,0,-1)
+
+unit.option[clanrats].enablement = 0
+unit.option[slaves].enablement = 0</evaluate>
+    </option>
+  <option id="ratOgres" name="Rat-ogres" abbrev="" category="option" priority="0" cost="25"></option>
+  <option id="assassin" name="Clan Eshin Assassin" abbrev="" category="option" priority="0" cost="50">
+    <evaluate>var x as number
+x = unit.assign[skTags.assassin]</evaluate>
+    </option>
+  <option id="wrlckChamp" name="Warlock Champion" abbrev="" category="flagship" priority="425" cost="100"></option>
+  <option id="wrlckMastr" name="Warlock Master" abbrev="" category="flagship" priority="426" cost="150"></option>
+  <option id="slaves" name="Slaves" abbrev="" category="option" priority="0" cost="0" textcost=" ">
+    <evaluate>var x as number
+var n as number
+for n = 1 to unit.option[slaves].selection
+x = unit.assign[skTags.slave]
+next
+
+~ max Should be max + current slave tags - total of slave tags
+unit.stat[maxSlaves] = round(roster.usersize/100,0,-1)*2
+
+unit.option[clanrats].enablement = 0
+unit.option[stormVermn].enablement = 0</evaluate>
+    </option>
+  <unit id="warpraider" name="Warp-raider" cost="25." textcost="75" squadname="Warp-raider Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3" modelcount="0">
+    <statval stat="honours" value="1"/>
+    <linkref id="skCrew"/>
+    <tag group="race" tag="skaven"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    </unit>
+  <unit id="deathburnr" name="Deathburner" cost="50." textcost="150" squadname="Deathburner Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="2"/>
+    <linkref id="skCrew"/>
+    <link option="chReward" display="200" rangemax="6" costtype="single" index="0"></link>
+    <tag group="race" tag="skaven"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    </unit>
+  <unit id="doombringr" name="Doombringer" cost="200." squadname="Doombringer" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="8"/>
+    <linkref id="flagship"/>
+    <linkref id="skCrew"/>
+    <linkref id="greyseer"/>
+    <link option="firethrowr" index="0"></link>
+    <tag group="race" tag="skaven"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="maxSlaves" message="Invalid number of Slaves" summary="Too many slaves">
+    <test/>
+    <valid><![CDATA[var nSlaves as number
+nSlaves = round(usersize/100,0,-1)*2
+@message = "Invalid number of Slaves, fleet may only have a total of " & nSlaves & " slaves"
+validif ( tagcount[skTags.slave] <= nSlaves)]]></valid>
+    </rule>
+  <rule id="minBurners" message="Must include at least one squadron of three Deathburners" summary="Minimum Deathburners">
+    <test>roster.skaven</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.deathburnr] >= 1)]]></valid>
+    </rule>
+  <rule id="maxAssassn" message="Invalid number of Clan Eshin Assassins" summary="Too many assassins">
+    <test/>
+    <valid><![CDATA[var n as number
+n = round(usersize/500,0,-1)
+@message = "Invalid number of  Clan Eshin Assassins, fleet may only have a total of " & n & " Clan Eshin Assassins"
+validif ( overall.tagcount[skTags.assassin] <= n)]]></valid>
+    </rule>
+  <rule id="maxSVermin" message="Invalid number of Storm Vermin" summary="Too many storm vermin">
+    <test/>
+    <valid><![CDATA[var nVermin as number
+nVermin = round(usersize/200,0,-1)
+@message = "Invalid number of Storm Vermin, fleet may only have a total of " & nVermin & " storm vermin"
+validif ( tagcount[skTags.stormVermn] <= nVermin)]]></valid>
+    </rule>
+  <rule id="minRaiders" message="Must include at least one squadron of three Warp-raiders" summary="Minimum Warp-raiders">
+    <test>roster.skaven</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.warpraider] >= 1)]]></valid>
+    </rule>
+  <rule id="maxClanrat" message="Invalid number of Clanrats" summary="Too many clanrats">
+    <test/>
+    <valid><![CDATA[var nClanrats as number
+nClanrats = round(usersize/100,0,-1)*2
+@message = "Invalid number of Clanrats, fleet may only have a total of " & nClanrats & " clanrats"
+validif ( tagcount[skTags.clanrat] <= nClanrats)]]></valid>
+    </rule>
+  </document>

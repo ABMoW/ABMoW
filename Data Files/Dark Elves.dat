@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="skyReaper" name="Sky Reaper" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <unit id="deathFort" name="Death Fortress" cost="100." squadname="Death Fortress" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="4"/>
+    <tag group="Group" tag="Independ"/>
+    <tag group="race" tag="darkElves"/>
+    </unit>
+  <unit id="doomreaver" name="Doomreaver" cost="50." textcost="150" squadname="Doomreaver Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="2"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="darkElves"/>
+    </unit>
+  <unit id="manticore" name="Manticore Lord" cost="75." squadname="Manticore Lord" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="15"/>
+    <statval stat="wounds" value="3"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="darkElves"/>
+    </unit>
+  <unit id="blackArk" name="Black Ark" description="Dark Elf Black Ark of naggaroth" cost="250." squadname="Black Ark" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="6"/>
+    <statval stat="honours" value="10"/>
+    <linkref id="flagship"/>
+    <linkref id="chWizard"/>
+    <link option="skyReaper" index="0"></link>
+    <tag group="Group" tag="MenOWar"/>
+    <tag group="race" tag="darkElves"/>
+    </unit>
+  <scripts></scripts>
+  </document>

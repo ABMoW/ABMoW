@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Extension">
+  <extover isunit="yes" entity="_Global_" index="12" group="race" empty="yes">
+    <condition>gnRoster.isChaos</condition>
+    <candidate><![CDATA[(race.tzeentch | race.khorne | race.nurgle | race.slaanesh | race.plague) & (Group.MenOWar | Group.Independ)]]></candidate>
+    <tagover id="nurgle"/>
+    <tagover id="khorne"/>
+    <tagover id="slaanesh"/>
+    <tagover id="tzeentch"/>
+    <tagover id="plague"/>
+    </extover>
+  </document>
