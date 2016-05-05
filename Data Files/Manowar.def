@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Definition">
   <game game="Man O&apos;War" publisher="Games Workshop" website="" deflang="en" languages="en"/>
-  <author author="Aaron" email="abmow@yahoo.com" website="https://github.com/ABMoW/ABMoW"/>
+  <author author="Aaron" email="abmow@yahoo.com" website="http://github.com/ABMoW/ABMoW"/>
   <release major="1" minor="0"></release>
   <structure roster="Fleet" folder="Manowar" prefix="Manowar" unitterm="Unit" squadterm="Squadron" usesquads="yes"></structure>
   <tools unitidtag="yes"/>
@@ -46,6 +46,12 @@
     <value id="noMoWCards" name="No Man O&apos;War Cards"/>
     </group>
   <ruleset id="standardRS" name="Standard" description="Standard Rules" default="yes"></ruleset>
+  <ruleset id="shpBoatsRS" name="Ships&apos;  Boats" description="Row,Row,Row yer Boat!: Ships&apos; Boats from Citadel Journal Issue 3"></ruleset>
+  <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
+  <context id="journalCX" name="Citadel journal" display="200" type="any">
+    <set id="bloodIrnRS"/>
+    <set id="shpBoatsRS"/>
+    </context>
   <context id="standardCX" name="Standard">
     <set id="standardRS"/>
     </context>
@@ -81,96 +87,6 @@
   <category id="option" name="Options" default="yes" leader="yes"></category>
   <exclusion id="flagship" minimum="1" maximum="1" message="Must have exactly one flagship"></exclusion>
   <exclusion id="wizard" minimum="0" maximum="1" message="Can only have one wizard in the army"></exclusion>
-  <profile id="mow1toSOL" name="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
-    <qualify>Group.MenOWar</qualify>
-    <minmax>var max as number
-max = tagcount[Group.ShipOTLine]
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="sol1plus" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" minvalue="1" maxvalue="0">
-    <qualify>Group.ShipOTLine</qualify>
-    </profile>
-  <profile id="fly2" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
-    <qualify>Group.Flyers</qualify>
-    <minmax>var max as number
-max = tagcount[Group.ShipOTLine]*2
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="sol1to2Mow" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" dynamic="yes" minvalue="1" maxvalue="0">
-    <qualify>Group.ShipOTLine</qualify>
-    <minmax>var max as number
-max = tagcount[Group.MenOWar]*2
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="mow1toSOLp" name="Men O&apos;War: 1+" heading="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
-    <qualify>Group.MenOWar</qualify>
-    <minmax>var max as number
-max = tagcount[Group.ShipOTLine]+1
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="seamonster" name="Sea Monsters" dynamic="yes" minvalue="0" maxvalue="0" minthresh="0+">
-    <qualify>Group.Monsters</qualify>
-    <minmax>var max as number
-max = tagcount[Group.ShipOTLine]
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="sol3plus" name="Ship of the Line Squadrons: 3+" heading="Ship of the Line Squadrons" minvalue="3" maxvalue="0">
-    <qualify>Group.ShipOTLine</qualify>
-    </profile>
-  <profile id="ind1toMow" name="Independents: 1+" heading="Independents" dynamic="yes" minvalue="1" maxvalue="0">
-    <qualify>Group.Independ</qualify>
-    <minmax>var max as number
-max = tagcount[Group.MenOWar]
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="fly1" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
-    <qualify>Group.Flyers</qualify>
-    <minmax>var max as number
-max = tagcount[Group.ShipOTLine]
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="ind1" name="Independents: 1" minvalue="1" maxvalue="1">
-    <qualify>Group.Independ</qualify>
-    </profile>
-  <profile id="sol1toMow" name="Ship of the Line Squadrons: 1+" dynamic="yes" minvalue="1" maxvalue="0">
-    <qualify>Group.ShipOTLine</qualify>
-    <minmax>var max as number
-max = tagcount[Group.MenOWar]
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="sol2plus" name="Ship of the Line Squadrons: 2+" heading="Ship of the Line Squadrons" minvalue="2" maxvalue="0">
-    <qualify>Group.ShipOTLine</qualify>
-    </profile>
-  <profile id="mow1" name="Men O&apos;War: 1" heading="Men O&apos;War" minvalue="1" maxvalue="1">
-    <qualify>Group.MenOWar</qualify>
-    </profile>
-  <profile id="mow2toSOLp" name="Men O&apos;War: 2+" dynamic="yes" minvalue="2" maxvalue="0">
-    <qualify>Group.MenOWar</qualify>
-    <minmax>var max as number
-max = 2*(tagcount[Group.ShipOTLine]+1)
-@maxvalue = max
-@maxtext = max
-@maxbar = max</minmax>
-    </profile>
-  <profile id="mow2plus" name="Men O&apos;War: 2+" heading="Men O&apos;War" minvalue="2" maxvalue="0">
-    <qualify>Group.MenOWar</qualify>
-    </profile>
   <profile id="fly1perK" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
@@ -188,6 +104,30 @@ if (this.cost <= max) then
 endif
 @bar = (this.cost/max) * 100
 @text = @bar & "%"]]></finaltest>
+    </profile>
+  <profile id="sol1to2Mow" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" dynamic="yes" minvalue="1" maxvalue="0">
+    <qualify>Group.ShipOTLine</qualify>
+    <minmax>var max as number
+max = tagcount[Group.MenOWar]*2
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="mow1toSOLp" name="Men O&apos;War: 1+" heading="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+    <qualify>Group.MenOWar</qualify>
+    <minmax>var max as number
+max = tagcount[Group.ShipOTLine]+1
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="mow2toSOLp" name="Men O&apos;War: 2+" dynamic="yes" minvalue="2" maxvalue="0">
+    <qualify>Group.MenOWar</qualify>
+    <minmax>var max as number
+max = 2*(tagcount[Group.ShipOTLine]+1)
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
     </profile>
   <profile id="mow1plus" name="Men O&apos;War: 1+" heading="Men O&apos;War" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
@@ -214,77 +154,72 @@ max = tagcount[Group.ShipOTLine] + tagcount[Group.MenOWar]
   <profile id="ind1plus" name="Independents: 1+" heading="Independents" minvalue="1" maxvalue="0">
     <qualify>Group.Independ</qualify>
     </profile>
-  <race id="nurgle" name="Chaos: Nurgle" abbrev="CHS">
-    <raceprof id="mow1plus"/>
-    <raceprof id="sol2plus"/>
-    <raceprof id="ind0to1"/>
-    <raceprof id="seamonster"/>
-    <raceprof id="ally"/>
-    <autotag group="gnRoster" tag="isChaos"/>
-    <autotag group="gnRoster" tag="noMoWCards"/>
-    <autounit id="plagueship"/>
-    <autounit id="plaguecrsh"/>
-    <autounit id="deathgally"/>
-    <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
-    </race>
-  <race id="darkElves" name="Dark Elves" abbrev="DELF">
-    <raceprof id="mow1"/>
-    <raceprof id="sol1plus"/>
-    <raceprof id="ind1toSqd"/>
-    <raceprof id="fly1"/>
-    <raceprof id="seamonster"/>
-    <raceprof id="ally"/>
-    <autotag group="gnRoster" tag="canWizard"/>
-    <autounit id="blackArk"/>
-    <autounit id="doomreaver"/>
-    <autounit id="deathFort"/>
-    <ally>roster.orcs | gnRoster.isChaos | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
-    </race>
-  <race id="pirates" name="Pirates" abbrev="PIR">
-    <raceprof id="sol1plus"/>
-    <raceprof id="seamonster"/>
-    <raceprof id="ally"/>
-    <autotag group="gnRoster" tag="canWizard"/>
-    <autounit id="ptWargally"/>
-    <ally>roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.skaven | roster.norse | roster.bretonnian</ally>
-    </race>
-  <race id="skaven" name="Skaven" abbrev="SKV">
-    <raceprof id="mow1perK"/>
-    <raceprof id="sol2plus"/>
-    <raceprof id="seamonster"/>
-    <raceprof id="ally"/>
-    <autotag group="gnRoster" tag="noMoWCards"/>
-    <autounit id="doombringr"/>
-    <autounit id="deathburnr"/>
-    <autounit id="warpraider"/>
-    <ally>roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.pirates | roster.norse</ally>
-    </race>
-  <race id="plague" name="Chaos: Plaguefleet" abbrev="CHS">
-    <raceprof id="mow1plus"/>
-    <raceprof id="sol1plus"/>
-    <raceprof id="ind0to1"/>
-    <raceprof id="fly1perK"/>
-    <raceprof id="seamonster"/>
-    <raceprof id="ally"/>
-    <autotag group="gnRoster" tag="isChaos"/>
-    <autotag group="gnRoster" tag="noMoWCards"/>
-    <autounit id="deathgally"/>
-    <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
-    </race>
-  <race id="slaanesh" name="Chaos: Slaanesh" abbrev="CHS">
-    <raceprof id="mow1plus"/>
-    <raceprof id="sol3plus"/>
-    <raceprof id="ind0to1"/>
-    <raceprof id="seamonster"/>
-    <raceprof id="ally"/>
-    <autotag group="gnRoster" tag="isChaos"/>
-    <autotag group="gnRoster" tag="noMoWCards"/>
-    <autounit id="hellship"/>
-    <autounit id="hellrammer"/>
-    <autounit id="hellslicer"/>
-    <autounit id="deathgally"/>
-    <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
-    </race>
+  <profile id="mow1" name="Men O&apos;War: 1" heading="Men O&apos;War" minvalue="1" maxvalue="1">
+    <qualify>Group.MenOWar</qualify>
+    </profile>
+  <profile id="mow1toSOL" name="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+    <qualify>Group.MenOWar</qualify>
+    <minmax>var max as number
+max = tagcount[Group.ShipOTLine]
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="sol1plus" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" minvalue="1" maxvalue="0">
+    <qualify>Group.ShipOTLine</qualify>
+    </profile>
+  <profile id="sol1toMow" name="Ship of the Line Squadrons: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+    <qualify>Group.ShipOTLine</qualify>
+    <minmax>var max as number
+max = tagcount[Group.MenOWar]
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="mow2plus" name="Men O&apos;War: 2+" heading="Men O&apos;War" minvalue="2" maxvalue="0">
+    <qualify>Group.MenOWar</qualify>
+    </profile>
+  <profile id="seamonster" name="Sea Monsters" dynamic="yes" minvalue="0" maxvalue="0" minthresh="0+">
+    <qualify>Group.Monsters</qualify>
+    <minmax>var max as number
+max = tagcount[Group.ShipOTLine]
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="sol2plus" name="Ship of the Line Squadrons: 2+" heading="Ship of the Line Squadrons" minvalue="2" maxvalue="0">
+    <qualify>Group.ShipOTLine</qualify>
+    </profile>
+  <profile id="fly2" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+    <qualify>Group.Flyers</qualify>
+    <minmax>var max as number
+max = tagcount[Group.ShipOTLine]*2
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="sol3plus" name="Ship of the Line Squadrons: 3+" heading="Ship of the Line Squadrons" minvalue="3" maxvalue="0">
+    <qualify>Group.ShipOTLine</qualify>
+    </profile>
+  <profile id="ind1toMow" name="Independents: 1+" heading="Independents" dynamic="yes" minvalue="1" maxvalue="0">
+    <qualify>Group.Independ</qualify>
+    <minmax>var max as number
+max = tagcount[Group.MenOWar]
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="fly1" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+    <qualify>Group.Flyers</qualify>
+    <minmax>var max as number
+max = tagcount[Group.ShipOTLine]
+@maxvalue = max
+@maxtext = max
+@maxbar = max</minmax>
+    </profile>
+  <profile id="ind1" name="Independents: 1" minvalue="1" maxvalue="1">
+    <qualify>Group.Independ</qualify>
+    </profile>
   <race id="tzeentch" name="Chaos: Tzeentch" abbrev="CHS">
     <raceprof id="mow1plus"/>
     <raceprof id="sol1plus"/>
@@ -394,6 +329,77 @@ max = tagcount[Group.ShipOTLine] + tagcount[Group.MenOWar]
     <autounit id="kingship"/>
     <autounit id="longship"/>
     <ally>roster.dwarves | roster.elves | roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.skaven | roster.pirates | roster.bretonnian | roster.empire</ally>
+    </race>
+  <race id="nurgle" name="Chaos: Nurgle" abbrev="CHS">
+    <raceprof id="mow1plus"/>
+    <raceprof id="sol2plus"/>
+    <raceprof id="ind0to1"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="ally"/>
+    <autotag group="gnRoster" tag="isChaos"/>
+    <autotag group="gnRoster" tag="noMoWCards"/>
+    <autounit id="plagueship"/>
+    <autounit id="plaguecrsh"/>
+    <autounit id="deathgally"/>
+    <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
+    </race>
+  <race id="darkElves" name="Dark Elves" abbrev="DELF">
+    <raceprof id="mow1"/>
+    <raceprof id="sol1plus"/>
+    <raceprof id="ind1toSqd"/>
+    <raceprof id="fly1"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="ally"/>
+    <autotag group="gnRoster" tag="canWizard"/>
+    <autounit id="blackArk"/>
+    <autounit id="doomreaver"/>
+    <autounit id="deathFort"/>
+    <ally>roster.orcs | gnRoster.isChaos | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
+    </race>
+  <race id="pirates" name="Pirates" abbrev="PIR">
+    <raceprof id="sol1plus"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="ally"/>
+    <autotag group="gnRoster" tag="canWizard"/>
+    <autounit id="ptWargally"/>
+    <ally>roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.skaven | roster.norse | roster.bretonnian</ally>
+    </race>
+  <race id="skaven" name="Skaven" abbrev="SKV">
+    <raceprof id="mow1perK"/>
+    <raceprof id="sol2plus"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="ally"/>
+    <autotag group="gnRoster" tag="noMoWCards"/>
+    <autounit id="doombringr"/>
+    <autounit id="deathburnr"/>
+    <autounit id="warpraider"/>
+    <ally>roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.pirates | roster.norse</ally>
+    </race>
+  <race id="plague" name="Chaos: Plaguefleet" abbrev="CHS">
+    <raceprof id="mow1plus"/>
+    <raceprof id="sol1plus"/>
+    <raceprof id="ind0to1"/>
+    <raceprof id="fly1perK"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="ally"/>
+    <autotag group="gnRoster" tag="isChaos"/>
+    <autotag group="gnRoster" tag="noMoWCards"/>
+    <autounit id="deathgally"/>
+    <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
+    </race>
+  <race id="slaanesh" name="Chaos: Slaanesh" abbrev="CHS">
+    <raceprof id="mow1plus"/>
+    <raceprof id="sol3plus"/>
+    <raceprof id="ind0to1"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="ally"/>
+    <autotag group="gnRoster" tag="isChaos"/>
+    <autotag group="gnRoster" tag="noMoWCards"/>
+    <autounit id="hellship"/>
+    <autounit id="hellrammer"/>
+    <autounit id="hellslicer"/>
+    <autounit id="deathgally"/>
+    <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
     </race>
   <defaults>
     <sortset id="defaultSRT" name="DefaultSort" group1="Group" group2="_Name_" default="yes"></sortset>

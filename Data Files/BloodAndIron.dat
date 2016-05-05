@@ -35,7 +35,7 @@
     <link option="drSpellEat" priority="485" index="13">
       <exclref id="hullRune"/>
       </link>
-    <live>dwTags.hasRunsmth</live>
+    <live><![CDATA[dwTags.hasRunsmth & ruleset.bloodIrnRS]]></live>
     </linkset>
   <linkset id="meCards">
     <link option="gnSpace" priority="451" category="option" index="4"></link>
@@ -52,16 +52,19 @@
     <link option="meBoiler" priority="464" index="3">
       <exclref id="meCard"/>
       </link>
-    <live>dwTags.hasMstrEng</live>
+    <live><![CDATA[dwTags.hasMstrEng & ruleset.bloodIrnRS]]></live>
     </linkset>
   <linkset id="engineer">
     <link option="engineer" index="0"></link>
+    <live>ruleset.bloodIrnRS</live>
     </linkset>
   <linkset id="runesmith">
     <link option="runesmith" index="0"></link>
+    <live>ruleset.bloodIrnRS</live>
     </linkset>
   <linkset id="slayers">
     <link option="slayers" index="0"></link>
+    <live>ruleset.bloodIrnRS</live>
     </linkset>
   <option id="drSmiting" name="Runes of Smiting" abbrev="" category="flagship" priority="0" cost="25">
     <live>gnTags.isFlagship</live>
