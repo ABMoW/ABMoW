@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Data">
-  <linkset id="chWizard">
-    <link option="gnSpace" priority="412" index="0"></link>
-    <link option="gnHeader" name="{macro color1} -- Chaos Sorcerer --{text 010101}" priority="413" index="1"></link>
-    <link option="chWizard" priority="415" index="2">
-      <exclref id="wizard"/>
-      </link>
-    <live>gnTags.isFlagship</live>
-    </linkset>
+  <tagset id="allChaos">
+    <tag group="race" tag="khorne"/>
+    <tag group="race" tag="nurgle"/>
+    <tag group="race" tag="plague"/>
+    <tag group="race" tag="slaanesh"/>
+    <tag group="race" tag="tzeentch"/>
+    </tagset>
   <linkset id="khorneFlag">
     <link option="flagship" index="0"></link>
     <live>roster.khorne | roster.plague</live>
@@ -24,16 +23,17 @@
     <link option="flagship" index="0"></link>
     <live>roster.tzeentch | roster.plague</live>
     </linkset>
-  <option id="chReward" name="Chaos Reward" abbrev="" category="option" priority="0" cost="25"></option>
+  <linkset id="chWizard">
+    <link option="gnSpace" priority="412" index="0"></link>
+    <link option="gnHeader" name="{macro color1} -- Chaos Sorcerer --{text 010101}" priority="413" index="1"></link>
+    <link option="chWizard" priority="415" index="2">
+      <exclref id="wizard"/>
+      </link>
+    <live>gnTags.isFlagship</live>
+    </linkset>
   <option id="iconOfPowr" name="Icon of Power" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <option id="chWizard" name="Chaos Sorcerer" abbrev="" category="flagship" priority="0" cost="150"></option>
-  <unit id="hellrammer" name="Hellrammer" cost="25." textcost="75" squadname="Hellrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="crew" value="2"/>
-    <statval stat="honours" value="1"/>
-    <tag group="Group" tag="ShipOTLine"/>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="slaanesh"/>
-    </unit>
+  <option id="chReward" name="Chaos Reward" abbrev="" category="option" priority="0" cost="25"></option>
   <unit id="hellslicer" name="Hellslicer" cost="25." textcost="75" squadname="Hellslicer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="plague"/>
@@ -52,8 +52,7 @@
     <statval stat="honours" value="6"/>
     <linkref id="khorneFlag"/>
     <link option="chReward" index="0"></link>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="khorne"/>
+    <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="hellship" name="Slaanesh Hellship" cost="150." squadname="Slaanesh Hellship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
@@ -62,8 +61,7 @@
     <linkref id="slnshFlag"/>
     <link option="chReward" index="1"></link>
     <link option="iconOfPowr" index="0"></link>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="slaanesh"/>
+    <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="plagueship" name="Nurgle Plagueship" cost="150." squadname="Nurgle Plagueship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
@@ -72,8 +70,7 @@
     <linkref id="nurgleFlag"/>
     <link option="chReward" index="1"></link>
     <link option="iconOfPowr" index="0"></link>
-    <tag group="race" tag="nurgle"/>
-    <tag group="race" tag="plague"/>
+    <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="wngdTerror" name="Tzeentch Great Winged Terror" cost="150." squadname="Tzeentch Great Winged Terror" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
@@ -82,8 +79,7 @@
     <linkref id="tzntchFlag"/>
     <link option="chReward" index="1"></link>
     <link option="iconOfPowr" index="0"></link>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="tzeentch"/>
+    <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="ironshark" name="Ironshark" cost="50." textcost="150" squadname="Ironshark Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
@@ -99,9 +95,8 @@
   <unit id="baneTower" name="Bane Tower of Tzeentch" cost="200." squadname="Bane Tower of Tzeentch" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
+    <tagref id="allChaos"/>
     <tag group="Group" tag="Independ"/>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="tzeentch"/>
     <member>!roster.khorne</member>
     </unit>
   <unit id="deathgally" name="Deathgalley" cost="66.66666" textcost="200" squadname="Deathgalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
@@ -113,11 +108,14 @@
     <tag group="race" tag="tzeentch"/>
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
+  <unit id="hellrammer" name="Hellrammer" cost="25." textcost="75" squadname="Hellrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="plague"/>
+    <tag group="race" tag="slaanesh"/>
+    </unit>
   <scripts></scripts>
-  <rule id="minDthGlly" message="Must include at least one squadron of three Deathgalleys" summary="Minimum Deathgalleys">
-    <test>gnRoster.isChaos</test>
-    <valid><![CDATA[validif (this.tagcount[unitid.deathgally] >= 1)]]></valid>
-    </rule>
   <rule id="plagueMoW" message="May not have a second Man O&apos;War of one Chaos Power until you have at least one of each" summary="Plaguefleet MoW Diversity">
     <test>roster.plague</test>
     <valid><![CDATA[var min as number
@@ -191,5 +189,9 @@ validif (other <= tagcount[unitid.wngdTerror])]]></valid>
   <rule id="minWngdTr" message="Must include at least one Tzeentch Great Winged Terror" summary="Minimum Tzeentch Great Winged Terror">
     <test>roster.tzeentch</test>
     <valid><![CDATA[validif (this.tagcount[unitid.wngdTerror] >= 1)]]></valid>
+    </rule>
+  <rule id="minDthGlly" message="Must include at least one squadron of three Deathgalleys" summary="Minimum Deathgalleys">
+    <test>gnRoster.isChaos</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.deathgally] >= 1)]]></valid>
     </rule>
   </document>
