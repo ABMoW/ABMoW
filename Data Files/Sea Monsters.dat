@@ -3,23 +3,6 @@
   <tagset id="monster">
     <tag group="Group" tag="Monsters"/>
     </tagset>
-  <tagset id="allRaces">
-    <tag group="race" tag="bretonnian"/>
-    <tag group="race" tag="chDwarves"/>
-    <tag group="race" tag="darkElves"/>
-    <tag group="race" tag="dwarves"/>
-    <tag group="race" tag="elves"/>
-    <tag group="race" tag="empire"/>
-    <tag group="race" tag="khorne"/>
-    <tag group="race" tag="norse"/>
-    <tag group="race" tag="nurgle"/>
-    <tag group="race" tag="orcs"/>
-    <tag group="race" tag="pirates"/>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="skaven"/>
-    <tag group="race" tag="slaanesh"/>
-    <tag group="race" tag="tzeentch"/>
-    </tagset>
   <unit id="triton" name="Triton" cost="100." squadname="Triton" idtag="yes" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="4"/>
     <statval stat="move" value="2 d6"/>
@@ -27,7 +10,66 @@
     <statval stat="tohit" value="4+"/>
     <statval stat="wounds" value="4"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     <member>!(roster.darkElves | roster.orcs | gnRoster.isChaos)</member>
     </unit>
   <unit id="behemoth" name="Behemoth" cost="50." squadname="Behemoth" statset="seamonster" maxsize="1" startsize="1">
@@ -37,7 +79,66 @@
     <statval stat="tohit" value="5+"/>
     <statval stat="wounds" value="3"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="elemental" name="Sea Elemental" cost="100." squadname="Sea Elemental" idtag="yes" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="4"/>
@@ -46,7 +147,66 @@
     <statval stat="tohit" value="5+"/>
     <statval stat="wounds" value="3"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="gargantuan" name="Gargantuan" cost="75." squadname="Gargantuan" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -55,7 +215,66 @@
     <statval stat="tohit" value="5+"/>
     <statval stat="wounds" value="4"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="kraken" name="Kraken" cost="50." squadname="Kraken" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="2"/>
@@ -64,7 +283,66 @@
     <statval stat="tohit" value="4+"/>
     <statval stat="wounds" value="4"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="leviathan" name="Black Leviathan" cost="100." squadname="Black Leviathan" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="4"/>
@@ -73,7 +351,66 @@
     <statval stat="tohit" value="Variable"/>
     <statval stat="wounds" value="6"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="megaladon" name="Megaladon" cost="50." squadname="Megaladon" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -82,7 +419,66 @@
     <statval stat="tohit" value="4+"/>
     <statval stat="wounds" value="4"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="promethean" name="Promethean" cost="75." squadname="Promethean" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -91,7 +487,66 @@
     <statval stat="tohit" value="4+"/>
     <statval stat="wounds" value="2"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <unit id="sea_dragon" name="Sea Dragon" cost="75." squadname="Sea Dragon" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -100,7 +555,66 @@
     <statval stat="tohit" value="4+"/>
     <statval stat="wounds" value="4"/>
     <tagref id="monster"/>
-    <tagref id="allRaces"/>
+    <override index="0" group="race" empty="yes">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition>roster.empire</condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
     </unit>
   <scripts></scripts>
   <rule id="triton" message="May only have one Triton per 1000 pts in the Fleet" summary="Maximum Tritons">

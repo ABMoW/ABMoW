@@ -101,11 +101,8 @@
     </unit>
   <unit id="deathgally" name="Deathgalley" cost="66.66666" textcost="200" squadname="Deathgalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <link option="chReward" rangemax="3" costtype="single" index="0"></link>
-    <tag group="race" tag="khorne"/>
-    <tag group="race" tag="nurgle"/>
-    <tag group="race" tag="plague"/>
-    <tag group="race" tag="slaanesh"/>
-    <tag group="race" tag="tzeentch"/>
+    <link option="chReward" nature="include" index="1"></link>
+    <tagref id="allChaos"/>
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
   <unit id="hellrammer" name="Hellrammer" cost="25." textcost="75" squadname="Hellrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
