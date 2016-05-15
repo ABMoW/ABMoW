@@ -45,15 +45,17 @@
     <value id="isChaos" name="Is Chaos"/>
     <value id="noMoWCards" name="No Man O&apos;War Cards"/>
     </group>
-  <ruleset id="standardRS" name="Standard" description="Standard Rules" default="yes"></ruleset>
+  <ruleset id="standardRS" name="Standard" description="Standard Rules" type="core" default="yes"></ruleset>
   <ruleset id="shpBoatsRS" name="Ships&apos;  Boats" description="Row,Row,Row yer Boat!: Ships&apos; Boats from Citadel Journal Issue 3"></ruleset>
   <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
+  <ruleset id="campaignRS" name="Campaign" description="Use Campaign rules"></ruleset>
+  <context id="campaignCX" name="Campaign" type="any">
+    <set id="campaignRS"/>
+    <legality>1=2</legality>
+    </context>
   <context id="journalCX" name="Citadel journal" display="200" type="any">
     <set id="bloodIrnRS"/>
     <set id="shpBoatsRS"/>
-    </context>
-  <context id="standardCX" name="Standard">
-    <set id="standardRS"/>
     </context>
   <unitstat id="crew" name="Crew" minvalue="1." default="1"></unitstat>
   <unitstat id="wounds" name="Wounds" minvalue="1."></unitstat>
@@ -85,6 +87,7 @@
     </category>
   <category id="antiflyer" name="Anti-Flyer Weapons"></category>
   <category id="option" name="Options" default="yes" leader="yes"></category>
+  <category id="crew" name="Crew"></category>
   <exclusion id="flagship" minimum="1" maximum="1" message="Must have exactly one flagship"></exclusion>
   <exclusion id="wizard" minimum="0" maximum="1" message="Can only have one wizard in the army"></exclusion>
   <profile id="fly1perK" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
