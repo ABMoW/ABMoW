@@ -27,7 +27,7 @@
     <link option="wrlckMastr" index="1"></link>
     <live>gnTags.isFlagship</live>
     </linkset>
-  <option id="clanrats" name="Clanrats" abbrev="" category="option" priority="0" cost="0" textcost=" ">
+  <option id="clanrats" name="Clanrats" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
 for n = 1 to unit.option[clanrats].selection
@@ -41,7 +41,7 @@ unit.option[slaves].enablement = 0
 unit.option[stormVermn].enablement = 0</evaluate>
     </option>
   <option id="firethrowr" name="Firethrower" abbrev="" category="antiflyer" priority="0" cost="25"></option>
-  <option id="stormVermn" name="Storm Vermin" abbrev="" category="option" priority="0" cost="0" textcost=" ">
+  <option id="stormVermn" name="Storm Vermin" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
 for n = 1 to unit.option[stormVermn].selection
@@ -54,14 +54,14 @@ unit.stat[maxSVermin] = round(roster.usersize/200,0,-1)
 unit.option[clanrats].enablement = 0
 unit.option[slaves].enablement = 0</evaluate>
     </option>
-  <option id="ratOgres" name="Rat-ogres" abbrev="" category="option" priority="0" cost="25"></option>
-  <option id="assassin" name="Clan Eshin Assassin" abbrev="" category="option" priority="0" cost="50">
+  <option id="ratOgres" name="Rat-ogres" abbrev="" category="crew" priority="0" cost="25"></option>
+  <option id="assassin" name="Clan Eshin Assassin" abbrev="" category="crew" priority="0" cost="50">
     <evaluate>var x as number
 x = unit.assign[skTags.assassin]</evaluate>
     </option>
   <option id="wrlckChamp" name="Warlock Champion" abbrev="" category="flagship" priority="425" cost="100"></option>
   <option id="wrlckMastr" name="Warlock Master" abbrev="" category="flagship" priority="426" cost="150"></option>
-  <option id="slaves" name="Slaves" abbrev="" category="option" priority="0" cost="0" textcost=" ">
+  <option id="slaves" name="Slaves" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
 for n = 1 to unit.option[slaves].selection
