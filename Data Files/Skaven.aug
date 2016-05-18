@@ -10,7 +10,6 @@
   <unitstat id="maxClanrat" name="Maximum Clanrats" private="yes" default="1"></unitstat>
   <unitstat id="maxSVermin" name="Maximum Storm Vermin" private="yes" default="1"></unitstat>
   <exclusion id="slaves" minimum="0" maximum="@maxSlaves"></exclusion>
-  <exclusion id="skCrew" minimum="1" maximum="1"></exclusion>
   <exclusion id="stormVermn" minimum="0" maximum="@maxSVermin"></exclusion>
   <exclusion id="ratOgres" minimum="0" maximum="#"></exclusion>
   <exclusion id="clanrats" minimum="0" maximum="@maxClanrat"></exclusion>

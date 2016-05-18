@@ -34,7 +34,6 @@ for n = 1 to unit.option[clanrats].selection
 x = unit.assign[skTags.clanrat]
 next
 
-~ max Should be max + current slave tags - total of slave tags
 unit.stat[maxClanrat] = round(roster.usersize/100,0,-1)*2
 
 unit.option[slaves].enablement = 0
@@ -48,7 +47,6 @@ for n = 1 to unit.option[stormVermn].selection
 x = unit.assign[skTags.stormVermn]
 next
 
-~ max Should be max + current slave tags - total of slave tags
 unit.stat[maxSVermin] = round(roster.usersize/200,0,-1)
 
 unit.option[clanrats].enablement = 0
@@ -68,7 +66,6 @@ for n = 1 to unit.option[slaves].selection
 x = unit.assign[skTags.slave]
 next
 
-~ max Should be max + current slave tags - total of slave tags
 unit.stat[maxSlaves] = round(roster.usersize/100,0,-1)*2
 
 unit.option[clanrats].enablement = 0
