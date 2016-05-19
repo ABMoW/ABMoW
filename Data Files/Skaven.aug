@@ -3,6 +3,7 @@
   <group id="skTags" width="5" name="Skaven Tags" visible="no" filter="no" accrue="yes">
     <value id="assassin" name="Clan Eshin Assassins"/>
     <value id="clanrat" name="Clanrat"/>
+    <value id="ratOgre" name="Rat-ogre"/>
     <value id="slave" name="Slave"/>
     <value id="stormVermn" name="Storm Vermin"/>
     </group>

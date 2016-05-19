@@ -73,7 +73,7 @@ Please remember that many scenarios and other rule settings are accessible via t
     <set id="bloodIrnRS"/>
     <set id="shpBoatsRS"/>
     </context>
-  <unitstat id="crew" name="Crew" minvalue="1." default="1"></unitstat>
+  <unitstat id="crew" name="Crew" minvalue="0." showbase="no" default="1"></unitstat>
   <unitstat id="wounds" name="Wounds" minvalue="1."></unitstat>
   <unitstat id="move" name="Move"></unitstat>
   <unitstat id="honours" name="Battle Honours" minvalue="1." default="1"></unitstat>
