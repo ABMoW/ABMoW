@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Data">
   <option id="hellblastr" name="Hellblaster" abbrev="" category="antiflyer" priority="0" cost="25"></option>
-  <unit id="griffon" name="Griffon Rider" description="Imperial Griffon Rider" cost="25." textcost="75" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
+  <unit id="griffon" name="Griffon Rider" description="Imperial Griffon Rider" cost="25." textcost="75" squadname="Griffon Rider Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="honours" value="1"/>
     <statval stat="move" value="18&quot;"/>
     <statval stat="wounds" value="2"/>
