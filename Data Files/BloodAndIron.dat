@@ -72,7 +72,7 @@
   <option id="drSwiftnes" name="Master Rune of Swiftness" abbrev="" category="flagship" priority="0" cost="50">
     <live>gnTags.isFlagship</live>
     </option>
-  <option id="engineer" name="Master Engineer" abbrev="" category="option" priority="0" cost="25">
+  <option id="engineer" name="Master Engineer" abbrev="" category="crew" priority="0" cost="25">
     <evaluate>var retval as number
 retval = entity.assign[dwTags.hasMstrEng]</evaluate>
     </option>
