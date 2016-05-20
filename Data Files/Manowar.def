@@ -79,6 +79,7 @@ Please remember that many scenarios and other rule settings are accessible via t
   <unitstat id="honours" name="Battle Honours" minvalue="1." default="1"></unitstat>
   <unitstat id="tohit" name="To Hit"></unitstat>
   <unitstat id="save" name="Saving Throw"></unitstat>
+  <unitstat id="belowWater" name="Below Waterline Hits" showbase="no"></unitstat>
   <statset id="shipStats" default="yes">
     <stat id="honours" identity="yes"/>
     <stat id="crew"/>
