@@ -28,6 +28,67 @@
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
     </unit>
+  <unit id="schmidt" name="Schmidt&apos;s Renegades(Ironfist)" description="Schmidt&apos;s renegades Ironfists" cost="25." textcost="75" squadname="Schmidt&apos;s Renegades" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <override index="0" group="race">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="12" group="race">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
+    </unit>
   <unit id="wolfship" name="Wolfship" description="Imperial Wolfships" cost="100." textcost="300" squadname="Wolfship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="4"/>
@@ -64,5 +125,29 @@ validif (cnt <= others)]]></valid>
     <test/>
     <valid><![CDATA[validif (tagcount[gnTags.isFlagship] > 0)
 ]]></valid>
+    </rule>
+  <rule id="maxSchmidt" message="May only have 1 squadron of ironfists(Schmidt&apos;s Renegades) in a non-imperial fleet" summary="Only one Schmidt&apos;s Renegades">
+    <test>!roster.empire</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.schmidt] <= 1)]]></valid>
+    </rule>
+  <rule id="maxIronfst" message="May only have one ironfist squadron for each other ship of the line squadron" summary="Maximum Ironfists">
+    <test/>
+    <valid><![CDATA[var cnt as number
+var others as number
+
+cnt = this.tagcount[unitid.ironfist]
+others = this.tagcount[unitid.wolfship] + this.tagcount[unitid.wargalley] + this.tagcount[unitid.hellhammer]
+
+validif (cnt <= others)]]></valid>
+    </rule>
+  <rule id="maxHellhmr" message="May only have one hell-hammer squadron for each other ship of the line squadron" summary="Maximum Hell-hammers">
+    <test/>
+    <valid><![CDATA[var cnt as number
+var others as number
+
+cnt = this.tagcount[unitid.hellhammer]
+others = this.tagcount[unitid.wolfship] + this.tagcount[unitid.wargalley] + this.tagcount[unitid.ironfist]
+
+validif (cnt <= others)]]></valid>
     </rule>
   </document>
