@@ -80,6 +80,7 @@
   <option id="chSpawn" name="Chaos Spawn" abbrev="" category="crew" priority="10" nature="free" cost="0"></option>
   <option id="iconOfPowr" name="Icon of Power" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="ironshark" name="Ironshark" cost="50." textcost="150" squadname="Ironshark Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="chCrews"/>
@@ -88,6 +89,7 @@
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
   <unit id="plaguecrsh" name="Plaguecrusher" cost="50." textcost="150" squadname="Plaguecrusher Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="chCrews"/>
@@ -96,6 +98,7 @@
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
   <unit id="baneTower" name="Bane Tower of Tzeentch" cost="200." squadname="Bane Tower of Tzeentch" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="0"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="chCrews"/>
@@ -105,6 +108,7 @@
     <member>!roster.khorne</member>
     </unit>
   <unit id="deathgally" name="Deathgalley" cost="66.66666" textcost="200" squadname="Deathgalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="chCrews"/>
@@ -114,6 +118,7 @@
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
   <unit id="hellrammer" name="Hellrammer" cost="25." textcost="75" squadname="Hellrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="1"/>
     <linkref id="chCrews"/>
@@ -122,6 +127,7 @@
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
   <unit id="hellslicer" name="Hellslicer" cost="25." textcost="75" squadname="Hellslicer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="1"/>
     <linkref id="chCrews"/>
@@ -138,6 +144,7 @@
     <tag group="race" tag="tzeentch"/>
     </unit>
   <unit id="bloodship" name="Khorne Bloodship" cost="150." squadname="Khorne Bloodship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="4"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="6"/>
     <linkref id="khorneFlag"/>
@@ -147,6 +154,7 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="hellship" name="Slaanesh Hellship" cost="150." squadname="Slaanesh Hellship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="3"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="6"/>
     <linkref id="slnshFlag"/>
@@ -157,6 +165,7 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="plagueship" name="Nurgle Plagueship" cost="150." squadname="Nurgle Plagueship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="3"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="6"/>
     <linkref id="nurgleFlag"/>
@@ -167,6 +176,7 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="wngdTerror" name="Tzeentch Great Winged Terror" cost="150." squadname="Tzeentch Great Winged Terror" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="0"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="6"/>
     <linkref id="tzntchFlag"/>

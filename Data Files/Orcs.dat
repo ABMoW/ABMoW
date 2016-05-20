@@ -2,18 +2,21 @@
 <document signature="Army Builder Data">
   <option id="doomdiver" name="Goblin Doomdiver" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="bigchukka" name="Bigchukka" cost="25." textcost="75" squadname="Bigchukka Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="1"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="orcs"/>
     </unit>
   <unit id="drillakill" name="Drillakilla" cost="50." textcost="150" squadname="Drillakilla Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="1"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="orcs"/>
     </unit>
   <unit id="hulk" name="Hulk" cost="150." squadname="Hulk" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="5"/>
     <statval stat="crew" value="5"/>
     <statval stat="honours" value="6"/>
     <linkref id="flagship"/>

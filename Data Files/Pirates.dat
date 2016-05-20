@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Data">
   <unit id="ptWargally" name="Wargalley" cost="50." textcost="150" squadname="Pirate Wargalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="flagship"/>

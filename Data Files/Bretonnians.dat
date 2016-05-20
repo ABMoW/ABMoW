@@ -2,12 +2,14 @@
 <document signature="Army Builder Data">
   <option id="archers" name="Archer Regiment" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="corsair" name="Corsair" cost="100." textcost="300" squadname="Corsair Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="3"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="4"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="bretonnian"/>
     </unit>
   <unit id="galleon" name="Galleon" cost="150." squadname="Galleon" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="belowWater" value="4"/>
     <statval stat="crew" value="4"/>
     <statval stat="honours" value="6"/>
     <linkref id="flagship"/>
@@ -16,6 +18,7 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="buccaneer" name="Buccaneer" cost="25." textcost="75" squadname="Buccaneer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="belowWater" value="1"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
