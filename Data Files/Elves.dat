@@ -3,7 +3,7 @@
   <option id="boltthrowr" name="Bolt Thrower" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <option id="wardancer" name="Wardancers" abbrev="" category="option" priority="0" cost="25"></option>
   <unit id="eagleship" name="Eagleship" cost="150." squadname="Eagleship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="3"/>
+    <statval stat="blwWater" value="3"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="6"/>
     <link option="boltthrowr" index="0"></link>
@@ -12,7 +12,7 @@
     <tag group="race" tag="elves"/>
     </unit>
   <unit id="hawkship" name="Hawkship" cost="50." textcost="150" squadname="Hawkship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="1"/>
+    <statval stat="blwWater" value="1"/>
     <statval stat="crew" value="1"/>
     <statval stat="honours" value="2"/>
     <link option="wardancer" index="0"></link>
@@ -34,7 +34,7 @@
     <tag group="race" tag="elves"/>
     </unit>
   <unit id="dragonship" name="Dragonship" cost="200." squadname="Dragonship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="4"/>
+    <statval stat="blwWater" value="4"/>
     <statval stat="crew" value="5"/>
     <statval stat="honours" value="8"/>
     <linkref id="flagship"/>

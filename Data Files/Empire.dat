@@ -9,7 +9,7 @@
     <tag group="race" tag="empire"/>
     </unit>
   <unit id="greatship" name="Greatship" description="Imperial Greatship" cost="150." squadname="Greatship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="4"/>
+    <statval stat="blwWater" value="4"/>
     <statval stat="crew" value="5"/>
     <statval stat="honours" value="6"/>
     <linkref id="flagship"/>
@@ -18,21 +18,21 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="hellhammer" name="Hell-hammer" description="Imperial Hell-hammers" cost="50." textcost="150" squadname="Hell-hammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="1"/>
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
     </unit>
   <unit id="ironfist" name="Ironfist" description="Imperial Ironfists" cost="25." textcost="75" squadname="Ironfist Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="1"/>
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
     </unit>
   <unit id="schmidt" name="Schmidt&apos;s Renegades(Ironfist)" description="Schmidt&apos;s renegades Ironfists" cost="25." textcost="75" squadname="Schmidt&apos;s Renegades" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="1"/>
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
@@ -94,14 +94,14 @@
       </override>
     </unit>
   <unit id="wolfship" name="Wolfship" description="Imperial Wolfships" cost="100." textcost="300" squadname="Wolfship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="3"/>
+    <statval stat="blwWater" value="3"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="4"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
     </unit>
   <unit id="wargalley" name="Wargalley" description="Imperial Wargalleys" cost="50." textcost="150" squadname="Wargalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>

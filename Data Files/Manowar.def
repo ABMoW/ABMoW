@@ -62,7 +62,7 @@ Please remember that many scenarios and other rule settings are accessible via t
     <value id="isChaos" name="Is Chaos"/>
     <value id="noMoWCards" name="No Man O&apos;War Cards"/>
     </group>
-  <group id="belowWater" width="2" name="Below Waterline Hits" dynamic="yes"></group>
+  <group id="blwWater" width="2" name="Below Waterline Hits" dynamic="yes"></group>
   <ruleset id="standardRS" name="Standard" description="Standard Rules" type="core" default="yes"></ruleset>
   <ruleset id="shpBoatsRS" name="Ships&apos;  Boats" description="Row,Row,Row yer Boat!: Ships&apos; Boats from Citadel Journal Issue 3"></ruleset>
   <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
@@ -81,11 +81,11 @@ Please remember that many scenarios and other rule settings are accessible via t
   <unitstat id="honours" name="Battle Honours" minvalue="1." default="1"></unitstat>
   <unitstat id="tohit" name="To Hit"></unitstat>
   <unitstat id="save" name="Saving Throw"></unitstat>
-  <unitstat id="belowWater" name="Below Waterline Hits" showbase="no"></unitstat>
+  <unitstat id="blwWater" name="Below Waterline Hits" showbase="no"></unitstat>
   <statset id="shipStats" default="yes">
     <stat id="honours" identity="yes"/>
     <stat id="crew"/>
-    <stat id="belowWater"/>
+    <stat id="blwWater"/>
     </statset>
   <statset id="seamonster">
     <stat id="honours" identity="yes"/>

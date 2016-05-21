@@ -2,7 +2,7 @@
 <document signature="Army Builder Data">
   <option id="gatling" name="Gatling Cannon" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="dreadnough" name="Dreadnought" description="Dwarf Dreadnought" cost="200." squadname="Dreadnought" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="4"/>
+    <statval stat="blwWater" value="4"/>
     <statval stat="crew" value="4"/>
     <statval stat="honours" value="8"/>
     <linkref id="flagship"/>
@@ -11,14 +11,14 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="monitor" name="Monitor" description="Dwarf Monitor" cost="50." textcost="150" squadname="Monitor Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="1"/>
+    <statval stat="blwWater" value="1"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="3"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="dwarves"/>
     </unit>
   <unit id="nautilus" name="Nautilus" description="Dwarven Nautilus" cost="75." squadname="Nautilus" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="1"/>
+    <statval stat="blwWater" value="1"/>
     <statval stat="crew" value="1"/>
     <statval stat="honours" value="3"/>
     <tag group="Group" tag="Independ"/>
@@ -39,7 +39,7 @@
     <tag group="race" tag="dwarves"/>
     </unit>
   <unit id="ironclad" name="Ironclad" cost="150." squadname="Ironclad" idtag="yes" statset="shipStats" startsize="1">
-    <statval stat="belowWater" value="3"/>
+    <statval stat="blwWater" value="3"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="6"/>
     <link option="gatling" index="0"></link>

@@ -2,7 +2,7 @@
 <document signature="Army Builder Data">
   <option id="rocketBatt" name="Rocket Battery" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="grtLevellr" name="Great Leveller Battlebarge" cost="150." squadname="Great Leveller Battlebarge" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="4"/>
+    <statval stat="blwWater" value="4"/>
     <statval stat="crew" value="4"/>
     <statval stat="honours" value="6"/>
     <link option="rocketBatt" index="0"></link>
@@ -10,21 +10,21 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="hullDestry" name="Hull-destroyer" cost="50." textcost="150" squadname="Hull-destroyer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="chDwarves"/>
     </unit>
   <unit id="thundrRoll" name="Thunder-roller" cost="50." textcost="150" squadname="Thunder-roller Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="chDwarves"/>
     </unit>
   <unit id="thundrfire" name="Thunderfire Battlebarge" cost="150." squadname="Thunderfire Battlebarge" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="4"/>
+    <statval stat="blwWater" value="4"/>
     <statval stat="crew" value="4"/>
     <statval stat="honours" value="6"/>
     <linkref id="flagship"/>

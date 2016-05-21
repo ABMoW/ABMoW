@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Data">
   <unit id="kingship" name="Kingship" cost="100." squadname="Kingship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
-    <statval stat="belowWater" value="4"/>
+    <statval stat="blwWater" value="4"/>
     <statval stat="crew" value="5"/>
     <statval stat="honours" value="4"/>
     <linkref id="flagship"/>
@@ -9,7 +9,7 @@
     <tag group="Group" tag="MenOWar"/>
     </unit>
   <unit id="longship" name="Longship" cost="50." squadname="Longship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
-    <statval stat="belowWater" value="2"/>
+    <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="3"/>
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
