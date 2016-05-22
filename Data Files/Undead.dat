@@ -40,28 +40,28 @@ x = unit.assign[unCrew.necro]</evaluate>
 x = unit.assign[unCrew.tombking]</evaluate>
     </option>
   <option id="skelArchrs" name="Skeleton Archers" abbrev="" category="antiflyer" priority="0" cost="25"></option>
-  <option id="skeleton" name="Skeletons" abbrev="" category="crew" priority="0" cost="0">
+  <option id="skeleton" name="Skeletons" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
-for n = 1 to unit.option[skeleton].selection
+for n = 1 to unit.option[skeleton].selection*unit.count[model]
 x = unit.assign[unCrew.skeleton]
 next
 
 unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] + unit.tagcount[unCrew.wight]</evaluate>
     </option>
-  <option id="wight" name="Wights" abbrev="" category="crew" priority="0" cost="0">
+  <option id="wight" name="Wights" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
-for n = 1 to unit.option[wight].selection
+for n = 1 to unit.option[wight].selection*unit.count[model]
 x = unit.assign[unCrew.wight]
 next
 
 unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] + unit.tagcount[unCrew.wight]</evaluate>
     </option>
-  <option id="zombie" name="Zombies" abbrev="" category="crew" priority="0" cost="0">
+  <option id="zombie" name="Zombies" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
-for n = 1 to unit.option[zombie].selection
+for n = 1 to unit.option[zombie].selection*unit.count[model]
 x = unit.assign[unCrew.zombie]
 next
 
