@@ -4,7 +4,7 @@
       <link option="gnSpace" priority="402" index="5">
         <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
         </link>
-      <link option="gnHeader" name="{macro color1} -- Wizard (optional) --{text 010101}" priority="403" cost="0." index="1">
+      <link option="gnHeader" name="{macro color1} -- Wizard --{text 010101}" priority="403" cost="0." index="1">
         <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
         </link>
       <link option="gnSpace" priority="502" index="7">

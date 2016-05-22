@@ -109,8 +109,8 @@ Please remember that many scenarios and other rule settings are accessible via t
   <category id="option" name="Options" default="yes" leader="yes"></category>
   <category id="crew" name="Crew"></category>
   <exclusion id="flagship" minimum="1" maximum="1" message="Must have exactly one flagship"></exclusion>
-  <exclusion id="wizard" minimum="0" maximum="1" message="Can only have one wizard in the army"></exclusion>
-  <profile id="fly1perK" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <exclusion id="wizard" minimum="0" maximum="1" message="Can only have one wizard in the fleet"></exclusion>
+  <profile id="fly1perK" name="Flyers" heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = round(roster.usersize/1000,0,-1)
@@ -118,7 +118,7 @@ max = round(roster.usersize/1000,0,-1)
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="ally" name="Ally" dynamic="yes" minvalue="0" maxvalue="0" maxbar="100">
+  <profile id="ally" name="Ally" heading="Allies" dynamic="yes" minvalue="0" maxvalue="0" maxbar="100">
     <qualify>ally.?</qualify>
     <finaltest><![CDATA[var max as number
 max = roster.usersize/3.0
@@ -136,7 +136,7 @@ max = tagcount[Group.MenOWar]*2
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="mow1toSOLp" name="Men O&apos;War: 1+" heading="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="mow1toSOLp" name="Men O&apos;War: 1+" heading="Men O&apos;War" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]+1
@@ -144,7 +144,7 @@ max = tagcount[Group.ShipOTLine]+1
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="mow2toSOLp" name="Men O&apos;War: 2+" dynamic="yes" minvalue="2" maxvalue="0">
+  <profile id="mow2toSOLp" name="Men O&apos;War: 2+" heading="Men O&apos;War" dynamic="yes" minvalue="2" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = 2*(tagcount[Group.ShipOTLine]+1)
@@ -155,7 +155,7 @@ max = 2*(tagcount[Group.ShipOTLine]+1)
   <profile id="mow1plus" name="Men O&apos;War: 1+" heading="Men O&apos;War" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     </profile>
-  <profile id="mow1perK" name="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="mow1perK" name="Men O&apos;War: 1+" heading="Men O&apos;War" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = round(roster.usersize/1000,0,-1)
@@ -171,7 +171,7 @@ max = tagcount[Group.ShipOTLine] + tagcount[Group.MenOWar]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="ind0to1" name="Independents: 0-1" minvalue="0" maxvalue="1">
+  <profile id="ind0to1" name="Independents: 0-1" heading="Independents" minvalue="0" maxvalue="1">
     <qualify>Group.Independ</qualify>
     </profile>
   <profile id="ind1plus" name="Independents: 1+" heading="Independents" minvalue="1" maxvalue="0">
@@ -180,7 +180,7 @@ max = tagcount[Group.ShipOTLine] + tagcount[Group.MenOWar]
   <profile id="mow1" name="Men O&apos;War: 1" heading="Men O&apos;War" minvalue="1" maxvalue="1">
     <qualify>Group.MenOWar</qualify>
     </profile>
-  <profile id="mow1toSOL" name="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="mow1toSOL" name="Men O&apos;War: 1+" heading="Men O&apos;War" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]
@@ -191,7 +191,7 @@ max = tagcount[Group.ShipOTLine]
   <profile id="sol1plus" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" minvalue="1" maxvalue="0">
     <qualify>Group.ShipOTLine</qualify>
     </profile>
-  <profile id="sol1toMow" name="Ship of the Line Squadrons: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="sol1toMow" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.ShipOTLine</qualify>
     <minmax>var max as number
 max = tagcount[Group.MenOWar]
@@ -213,7 +213,7 @@ max = tagcount[Group.ShipOTLine]
   <profile id="sol2plus" name="Ship of the Line Squadrons: 2+" heading="Ship of the Line Squadrons" minvalue="2" maxvalue="0">
     <qualify>Group.ShipOTLine</qualify>
     </profile>
-  <profile id="fly2" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <profile id="fly2" name="Flyers" heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]*2
@@ -232,7 +232,7 @@ max = tagcount[Group.MenOWar]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="fly1" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <profile id="fly1" name="Flyers"  heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]
@@ -240,7 +240,10 @@ max = tagcount[Group.ShipOTLine]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="ind1" name="Independents: 1" minvalue="1" maxvalue="1">
+  <profile id="fly0" name="Flyers: 0+" heading="Flyers" minvalue="0" maxvalue="0">
+    <qualify>Group.Flyers</qualify>
+    </profile>
+  <profile id="ind1" name="Independents: 1" heading="Independents" minvalue="1" maxvalue="1">
     <qualify>Group.Independ</qualify>
     </profile>
   <race id="tzeentch" name="Chaos: Tzeentch" abbrev="CHS">
@@ -423,6 +426,13 @@ max = tagcount[Group.ShipOTLine]
     <autounit id="hellslicer"/>
     <autounit id="deathgally"/>
     <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
+    </race>
+  <race id="undead" name="Undead" abbrev="UND">
+    <raceprof id="mow1toSOLp"/>
+    <raceprof id="sol1plus"/>
+    <raceprof id="fly0"/>
+    <raceprof id="seamonster"/>
+    <autounit id="necropolis"/>
     </race>
   <defaults>
     <sortset id="defaultSRT" name="DefaultSort" group1="Group" group2="_Name_" default="yes"></sortset>

@@ -92,6 +92,10 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
     </unit>
   <unit id="wolfship" name="Wolfship" description="Imperial Wolfships" cost="100." textcost="300" squadname="Wolfship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="3"/>
