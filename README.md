@@ -10,14 +10,20 @@ Army Builder is a wonderful program that greatly simplifies creating and validat
 
 ## Installation
 
-Installation of the files into army builder is very simple. Simple clone the project to a local directory and run the appropriate following command, substituting the directory you cloned the project to for **\<Cloned Directory\>**
+Installation of the files into army builder is very simple. Two methods can be used depending if you plan to develop on the files or not.
 
-### Windows
-    mklink /J "<Cloned directory>\ABMoW\Data Files" "C:\ProgramData\Army Builder\data\Manowar"
+### Simple Installation
+Download the project zip file and unzip into a temporary directory.  Rename the *Data Files* folder to *Manowar* and copy it to your Army Builder data directory.  By default this is located at *C:\ProgramData\Army Builder\data* on Windows and *~/Library/Application Support/Army Builder/data* on OSX.
 
-### OSX
+### Development Installation
+Clone the project to a local directory and run the appropriate following command, substituting the directory you cloned the project to for **\<Cloned Directory\>**
 
-    ln -s "<Cloned directory>/ABMoW/Data Files" "<~/Library/Application Support/Army Builder/data/Manowar"
+#### Windows
+    mklink /J "C:\ProgramData\Army Builder\data\Manowar" "<Cloned directory>\ABMoW\Data Files"
+
+#### OSX
+
+    ln -s "<Cloned directory>/ABMoW/Data Files" "~/Library/Application Support/Army Builder/data/Manowar"
 
 By using a link to install the files, they can be modified in the local git directory and they will automatically be available for Army Builder without having to perform an intermediate copy step.
 
@@ -31,4 +37,4 @@ If you would like to contribute to the project please contact <abmow@yahoo.com>.
 
 ## License
 
-This project is under the MIT license, details which can be found in the LICENSE file.
+This project is under the MIT license, details which can be found in the [license file](LICENSE).
