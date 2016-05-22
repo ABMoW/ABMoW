@@ -13,7 +13,7 @@ Army Builder is a wonderful program that greatly simplifies creating and validat
 Installation of the files into army builder is very simple. Simple clone the project to a local directory and run the appropriate following command, substituting the directory you cloned the project to for **\<Cloned Directory\>**
 
 ### Windows
-    mklink /J "<Cloned directory>\ABMoW\Data Files" "C:\ProgramData\Army Builder\data\Manowar"
+    mklink /J "C:\ProgramData\Army Builder\data\Manowar" "<Cloned directory>\ABMoW\Data Files"
 
 ### OSX
 
