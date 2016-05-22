@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="doomdiver" name="Goblin Doomdiver" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <unit id="bigchukka" name="Bigchukka" cost="25." textcost="75" squadname="Bigchukka Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="1"/>
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="orcs"/>
+    </unit>
+  <unit id="drillakill" name="Drillakilla" cost="50." textcost="150" squadname="Drillakilla Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="1"/>
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="orcs"/>
+    </unit>
+  <unit id="hulk" name="Hulk" cost="150." squadname="Hulk" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="blwWater" value="5"/>
+    <statval stat="crew" value="5"/>
+    <statval stat="honours" value="6"/>
+    <linkref id="flagship"/>
+    <link option="doomdiver" index="0"></link>
+    <tag group="race" tag="orcs"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <unit id="wyvern" name="Wyvern Rider" cost="50." squadname="Wyvern Rider" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="2"/>
+    <statval stat="move" value="15"/>
+    <statval stat="wounds" value="3"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="orcs"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="maxChukkas" message="May only have 2 Bigchukka squadrons for each Drillkilla squadron" summary="Maximum Bigchukkas">
+    <test>roster.orcs</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.bigchukka] <= this.tagcount[unitid.drillakill]*2)]]></valid>
+    </rule>
+  <rule id="minChukkas" message="Must include at least one squadron of three Bigchukkas" summary="Minimum Bigchukkas">
+    <test>roster.orcs</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.bigchukka] >= 1)]]></valid>
+    </rule>
+  <rule id="minDrillas" message="Must include at least one squadron of three Drillakillas" summary="Minimum Drillakillas">
+    <test>roster.orcs</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.drillakill] >= 1)]]></valid>
+    </rule>
+  </document>

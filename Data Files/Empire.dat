@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="hellblastr" name="Hellblaster" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <unit id="griffon" name="Griffon Rider" description="Imperial Griffon Rider" cost="25." textcost="75" squadname="Griffon Rider Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="1"/>
+    <statval stat="move" value="18"/>
+    <statval stat="wounds" value="2"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="empire"/>
+    </unit>
+  <unit id="greatship" name="Greatship" description="Imperial Greatship" cost="150." squadname="Greatship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="blwWater" value="4"/>
+    <statval stat="crew" value="5"/>
+    <statval stat="honours" value="6"/>
+    <linkref id="flagship"/>
+    <link option="hellblastr" index="0"></link>
+    <tag group="race" tag="empire"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <unit id="hellhammer" name="Hell-hammer" description="Imperial Hell-hammers" cost="50." textcost="150" squadname="Hell-hammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="2"/>
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="2"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="empire"/>
+    </unit>
+  <unit id="ironfist" name="Ironfist" description="Imperial Ironfists" cost="25." textcost="75" squadname="Ironfist Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="2"/>
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="empire"/>
+    </unit>
+  <unit id="schmidt" name="Schmidt&apos;s Renegades(Ironfist)" description="Schmidt&apos;s renegades Ironfists" cost="25." textcost="75" squadname="Schmidt&apos;s Renegades" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="2"/>
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="1"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <override index="0" group="race">
+      <condition>roster.orcs</condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race">
+      <condition>roster.skaven</condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race">
+      <condition>roster.bretonnian</condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race">
+      <condition>roster.chDwarves</condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race">
+      <condition>roster.khorne</condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race">
+      <condition>roster.plague</condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race">
+      <condition>roster.slaanesh</condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race">
+      <condition>roster.tzeentch</condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race">
+      <condition>roster.darkElves</condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race">
+      <condition>roster.dwarves</condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race">
+      <condition>roster.elves</condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="12" group="race">
+      <condition>roster.norse</condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race">
+      <condition>roster.pirates</condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race">
+      <condition>roster.nurgle</condition>
+      <tagover id="nurgle"/>
+      </override>
+    </unit>
+  <unit id="wolfship" name="Wolfship" description="Imperial Wolfships" cost="100." textcost="300" squadname="Wolfship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="3"/>
+    <statval stat="crew" value="3"/>
+    <statval stat="honours" value="4"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="empire"/>
+    </unit>
+  <unit id="wargalley" name="Wargalley" description="Imperial Wargalleys" cost="50." textcost="150" squadname="Wargalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="2"/>
+    <statval stat="crew" value="2"/>
+    <statval stat="honours" value="2"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <tag group="race" tag="empire"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="minWolfs" message="Must include at least one squadron of three Wolfships" summary="Minimum Wolfships">
+    <test>roster.empire</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.wolfship] >= 1)
+]]></valid>
+    </rule>
+  <rule id="minWarglly" message="Must include at least one squadron of three Wargalleys" summary="Minimum Wargalleys">
+    <test>roster.empire</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.wargalley] >= 1)]]></valid>
+    </rule>
+  <rule id="maxWarglly" message="May only have 2 Wargalley squadrons for each Greatship and each Wolfship squadron" summary="Maximum Wargalleys">
+    <test>roster.empire</test>
+    <valid><![CDATA[var cnt as number
+var others as number
+
+cnt = this.tagcount[unitid.wargalley] 
+others = this.tagcount[unitid.wolfship]*2 + this.tagcount[unitid.greatship]*2
+
+validif (cnt <= others)]]></valid>
+    </rule>
+  <rule id="minFlagshp" message="You must have one Flagship in the Fleet" summary="Must have a Flagship">
+    <test/>
+    <valid><![CDATA[validif (tagcount[gnTags.isFlagship] > 0)
+]]></valid>
+    </rule>
+  <rule id="maxSchmidt" message="May only have 1 squadron of ironfists(Schmidt&apos;s Renegades) in a non-imperial fleet" summary="Only one Schmidt&apos;s Renegades">
+    <test>!roster.empire</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.schmidt] <= 1)]]></valid>
+    </rule>
+  <rule id="maxIronfst" message="May only have one ironfist squadron for each other ship of the line squadron" summary="Maximum Ironfists">
+    <test/>
+    <valid><![CDATA[var cnt as number
+var others as number
+
+cnt = this.tagcount[unitid.ironfist]
+others = this.tagcount[unitid.wolfship] + this.tagcount[unitid.wargalley] + this.tagcount[unitid.hellhammer]
+
+validif (cnt <= others)]]></valid>
+    </rule>
+  <rule id="maxHellhmr" message="May only have one hell-hammer squadron for each other ship of the line squadron" summary="Maximum Hell-hammers">
+    <test/>
+    <valid><![CDATA[var cnt as number
+var others as number
+
+cnt = this.tagcount[unitid.hellhammer]
+others = this.tagcount[unitid.wolfship] + this.tagcount[unitid.wargalley] + this.tagcount[unitid.ironfist]
+
+validif (cnt <= others)]]></valid>
+    </rule>
+  </document>

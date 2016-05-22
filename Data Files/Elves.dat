@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <option id="boltthrowr" name="Bolt Thrower" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <option id="wardancer" name="Wardancers" abbrev="" category="option" priority="0" cost="25"></option>
+  <unit id="eagleship" name="Eagleship" cost="150." squadname="Eagleship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="blwWater" value="3"/>
+    <statval stat="crew" value="3"/>
+    <statval stat="honours" value="6"/>
+    <link option="boltthrowr" index="0"></link>
+    <link option="wardancer" index="1"></link>
+    <tag group="Group" tag="MenOWar"/>
+    <tag group="race" tag="elves"/>
+    </unit>
+  <unit id="hawkship" name="Hawkship" cost="50." textcost="150" squadname="Hawkship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="1"/>
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="2"/>
+    <link option="wardancer" index="0"></link>
+    <tag group="race" tag="elves"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    </unit>
+  <unit id="wareagle" name="War Eagle" cost="25." textcost="75" squadname="War Eagle Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="1"/>
+    <statval stat="move" value="24"/>
+    <statval stat="wounds" value="1"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="elves"/>
+    </unit>
+  <unit id="dragonridr" name="Dragon Rider" cost="75." squadname="Dragon Rider" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="15"/>
+    <statval stat="wounds" value="4"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="elves"/>
+    </unit>
+  <unit id="dragonship" name="Dragonship" cost="200." squadname="Dragonship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="blwWater" value="4"/>
+    <statval stat="crew" value="5"/>
+    <statval stat="honours" value="8"/>
+    <linkref id="flagship"/>
+    <link option="boltthrowr" index="0"></link>
+    <link option="wardancer" index="1"></link>
+    <tag group="race" tag="elves"/>
+    <tag group="Group" tag="MenOWar"/>
+    </unit>
+  <scripts></scripts>
+  <rule id="maxDragRdr" message="You may only have one Dragon Rider for every Ship of the Line Squadron in the fleet" summary="Maximum Dragon Riders">
+    <test>roster.elves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.dragonridr] <= this.tagcount[Group.ShipOTLine])]]></valid>
+    </rule>
+  <rule id="maxDragShp" message="You may only have one Dragonship for every Eagleship in the Fleet" summary="Maximum Dragonships">
+    <test>roster.elves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.dragonship] <= this.tagcount[unitid.eagleship])]]></valid>
+    </rule>
+  <rule id="maxWarEagl" message="You may only have one Squadron of War Eagles for every Ship of the Line Squadron in the fleet" summary="Maximum War Eagle Squadrons">
+    <test>roster.elves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.wareagle] <= this.tagcount[Group.ShipOTLine])]]></valid>
+    </rule>
+  <rule id="minDragShp" message="You must have one Dragonship in the Fleet" summary="Minimum Dragonships">
+    <test>roster.elves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.dragonship] >= 1)]]></valid>
+    </rule>
+  <rule id="minEagShp" message="You must have one Eagleship in the Fleet" summary="Minimum Eagleships">
+    <test>roster.elves</test>
+    <valid><![CDATA[validif (this.tagcount[unitid.eagleship] >= 1)]]></valid>
+    </rule>
+  </document>

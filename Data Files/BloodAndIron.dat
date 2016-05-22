@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <linkset id="runes">
+    <link option="gnSpace" priority="451" index="5"></link>
+    <link option="gnHeader" name="{macro color1} -- Weapon Runes --{text 010101}" priority="452" index="6"></link>
+    <link option="drFortune" priority="461" rangemax="2" index="0">
+      <exclref id="weaponRune"/>
+      </link>
+    <link option="drSmiting" priority="462" rangemax="2" index="1">
+      <exclref id="weaponRune"/>
+      </link>
+    <link option="drBurning" priority="463" rangemax="2" index="2">
+      <exclref id="weaponRune"/>
+      </link>
+    <link option="drSwiftnes" priority="464" rangemax="2" index="3">
+      <exclref id="weaponRune"/>
+      </link>
+    <link option="drPenetrat" priority="465" rangemax="2" index="4">
+      <exclref id="weaponRune"/>
+      </link>
+    <link option="gnSpace" priority="471" index="7"></link>
+    <link option="gnHeader" name="{macro color1} -- Hull Runes --{text 010101}" priority="472" index="8"></link>
+    <link option="drGromril" priority="481" index="9">
+      <exclref id="hullRune"/>
+      </link>
+    <link option="drPiercing" priority="482" index="10">
+      <exclref id="hullRune"/>
+      </link>
+    <link option="drCleaving" priority="483" index="11">
+      <exclref id="hullRune"/>
+      </link>
+    <link option="drAdamant" priority="484" index="12">
+      <exclref id="hullRune"/>
+      </link>
+    <link option="drSpellEat" priority="485" index="13">
+      <exclref id="hullRune"/>
+      </link>
+    <live><![CDATA[dwTags.hasRunsmth & ruleset.bloodIrnRS]]></live>
+    </linkset>
+  <linkset id="meCards">
+    <link option="gnSpace" priority="451" category="option" index="4"></link>
+    <link option="gnHeader" name="{macro color1} -- Master Engineer Cards --{text 010101}" priority="452" category="option" index="5"></link>
+    <link option="meFlameCan" priority="461" index="0">
+      <exclref id="meCard"/>
+      </link>
+    <link option="meGears" priority="462" index="1">
+      <exclref id="meCard"/>
+      </link>
+    <link option="meOverdriv" priority="463" index="2">
+      <exclref id="meCard"/>
+      </link>
+    <link option="meBoiler" priority="464" index="3">
+      <exclref id="meCard"/>
+      </link>
+    <live><![CDATA[dwTags.hasMstrEng & ruleset.bloodIrnRS]]></live>
+    </linkset>
+  <linkset id="engineer">
+    <link option="engineer" index="0"></link>
+    <live>ruleset.bloodIrnRS</live>
+    </linkset>
+  <linkset id="runesmith">
+    <link option="runesmith" index="0"></link>
+    <live>ruleset.bloodIrnRS</live>
+    </linkset>
+  <linkset id="slayers">
+    <link option="slayers" index="0"></link>
+    <live>ruleset.bloodIrnRS</live>
+    </linkset>
+  <option id="drSmiting" name="Runes of Smiting" abbrev="" category="flagship" priority="0" cost="25">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drSwiftnes" name="Master Rune of Swiftness" abbrev="" category="flagship" priority="0" cost="50">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="engineer" name="Master Engineer" abbrev="" category="crew" priority="0" cost="25">
+    <evaluate>var retval as number
+retval = entity.assign[dwTags.hasMstrEng]</evaluate>
+    </option>
+  <option id="runesmith" name="Runesmith" abbrev="" category="flagship" priority="440" cost="50">
+    <live>gnTags.isFlagship</live>
+    <evaluate>var retval as number
+retval = entity.assign[dwTags.hasRunsmth]</evaluate>
+    </option>
+  <option id="drAdamant" name="Master Rune of Adamant" abbrev="" category="flagship" priority="0" cost="50">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drCleaving" name="Rune of Cleaving" abbrev="" category="flagship" priority="0" cost="25">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drGromril" name="Master Rune of Gromril" abbrev="" category="flagship" priority="0" cost="50">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drPiercing" name="Rune of Piercing" abbrev="" category="flagship" priority="0" cost="25">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drSpellEat" name="Rune of Spell Eating" abbrev="" category="flagship" priority="0" cost="50">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="meBoiler" name="Spare Boiler" abbrev="" category="option" priority="0" cost="50"></option>
+  <option id="meFlameCan" name="Flame Cannon" abbrev="" category="option" priority="0" cost="25"></option>
+  <option id="meGears" name="Improved Gears" abbrev="" category="option" priority="0" cost="25"></option>
+  <option id="meOverdriv" name="Overdrive Enginer" abbrev="" category="option" priority="0" cost="50"></option>
+  <option id="slayers" name="Slayers" abbrev="" category="flagship" priority="439" cost="50">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drBurning" name="Rune of Burning" abbrev="" category="flagship" priority="0" cost="25">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drFortune" name="Runes of Fortune" abbrev="" category="flagship" priority="0" cost="25">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <option id="drPenetrat" name="Rune of Penetrating" abbrev="" category="flagship" priority="0" cost="25">
+    <live>gnTags.isFlagship</live>
+    </option>
+  <scripts></scripts>
+  </document>

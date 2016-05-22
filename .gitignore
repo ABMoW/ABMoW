@@ -1,0 +1,13 @@
+# Backup Files #
+################
+*.bak
+
+# Compiled Files #
+################
+*.abz
+
+# IDE Files #
+################
+*.iml
+.idea/
+Notes.txt

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Extension">
+  <extlinkset objtype="unit" id="dreadnough" linkset="runes"/>
+  <extlinkset objtype="unit" id="ironclad" linkset="meCards"/>
+  <extlinkset objtype="unit" id="dreadnough" linkset="meCards"/>
+  <extlinkset objtype="unit" id="dreadnough" linkset="engineer"/>
+  <extlinkset objtype="unit" id="dreadnough" linkset="runesmith"/>
+  <extlinkset objtype="unit" id="dreadnough" linkset="slayers"/>
+  <extlinkset objtype="unit" id="ironclad" linkset="engineer"/>
+  </document>

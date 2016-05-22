@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <linkset id="shipsBoats" global="yes">
+    <link option="bombBoat" priority="910" rangemax="100" index="0">
+      <exclref id="shpBoatsEx"/>
+      </link>
+    <link option="raidBoat" priority="911" rangemax="100" index="1">
+      <exclref id="shpBoatsEx"/>
+      </link>
+    <link option="lifeBoat" priority="912" rangemax="100" index="2">
+      <exclref id="shpBoatsEx"/>
+      </link>
+    <live><![CDATA[ruleset.shpBoatsRS & (Group.MenOWar | Group.ShipOTLine | Group.Independ) & (!runtime.blwWater0)]]></live>
+    </linkset>
+  <option id="bombBoat" name="Bomb-Boat" abbrev="" category="shpBoatsCt" priority="0" cost="25"></option>
+  <option id="lifeBoat" name="Lifeboat" abbrev="" category="shpBoatsCt" priority="0" cost="25"></option>
+  <option id="raidBoat" name="Raiding Boat" abbrev="" category="shpBoatsCt" priority="0" cost="25"></option>
+  <scripts></scripts>
+  </document>
