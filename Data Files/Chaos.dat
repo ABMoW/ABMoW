@@ -71,13 +71,13 @@
       <live><![CDATA[Group.MenOWar & ruleset.campaignRS & runtime.crew3]]></live>
       </link>
     </linkset>
-  <option id="chWizard" name="Chaos Sorcerer" abbrev="" category="flagship" priority="0" cost="150"></option>
+  <option id="chWizard" name="Chaos Sorcerer" abbrev="" category="flagship" priority="0" cost="150" textcost=" "></option>
   <option id="chReward" name="Chaos Reward" abbrev="" category="option" priority="0" cost="25"></option>
-  <option id="chCultists" name="Chaos Cultists" abbrev="" category="crew" priority="11" nature="free" cost="0"></option>
-  <option id="chWarriors" name="Chaos Warriors" abbrev="" category="crew" priority="13" nature="free" cost="0"></option>
-  <option id="chBeastmen" name="Beastmen" abbrev="" category="crew" priority="12" nature="free" cost="0"></option>
-  <option id="chKnights" name="Chaos Knights" abbrev="" category="crew" priority="14" nature="free" cost="0"></option>
-  <option id="chSpawn" name="Chaos Spawn" abbrev="" category="crew" priority="10" nature="free" cost="0"></option>
+  <option id="chCultists" name="Chaos Cultists" abbrev="" category="crew" priority="11" nature="free" cost="0" textcost=" "></option>
+  <option id="chWarriors" name="Chaos Warriors" abbrev="" category="crew" priority="13" nature="free" cost="0" textcost=" "></option>
+  <option id="chBeastmen" name="Beastmen" abbrev="" category="crew" priority="12" nature="free" cost="0" textcost=" "></option>
+  <option id="chKnights" name="Chaos Knights" abbrev="" category="crew" priority="14" nature="free" cost="0" textcost=" "></option>
+  <option id="chSpawn" name="Chaos Spawn" abbrev="" category="crew" priority="10" nature="free" cost="0" textcost=" "></option>
   <option id="iconOfPowr" name="Icon of Power" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="ironshark" name="Ironshark" cost="50." textcost="150" squadname="Ironshark Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -112,8 +112,8 @@
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="chCrews"/>
-    <link option="chReward" nature="include" index="1"></link>
-    <link option="chReward" rangemax="3" costtype="single" index="0"></link>
+    <link option="chReward" display="203" nature="include" textcost="Free" index="1"></link>
+    <link option="chReward" display="205" rangemax="3" costtype="single" index="0"></link>
     <tagref id="allChaos"/>
     <tag group="Group" tag="ShipOTLine"/>
     </unit>
