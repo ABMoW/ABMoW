@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Data">
   <linkset id="undeadFlag">
-    <link option="gnSpace" priority="422" index="0">
+    <link option="gnSpace" priority="412" index="0">
       <live>gnTags.isFlagship</live>
       </link>
-    <link option="gnHeader" name="{macro color1} -- Undead Admiral --{text 010101}" priority="423" index="1">
+    <link option="gnHeader" name="{macro color1} -- Undead Admiral --{text 010101}" priority="413" index="1">
       <live>gnTags.isFlagship</live>
       </link>
-    <link option="liche" priority="425" index="2">
+    <link option="liche" priority="415" index="2">
       <exclref id="admiral"/>
       </link>
-    <link option="necro" priority="426" index="3">
+    <link option="necro" priority="416" index="3">
       <exclref id="admiral"/>
       </link>
-    <link option="tombking" priority="427" index="4">
+    <link option="tombking" priority="417" index="4">
       <exclref id="admiral"/>
       </link>
     </linkset>

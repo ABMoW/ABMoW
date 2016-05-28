@@ -67,9 +67,13 @@ Please remember that many scenarios and other rule settings are accessible via t
   <ruleset id="shpBoatsRS" name="Ships&apos;  Boats" description="Row,Row,Row yer Boat!: Ships&apos; Boats from Citadel Journal Issue 3"></ruleset>
   <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
   <ruleset id="campaignRS" name="Campaign" description="Use Campaign rules"></ruleset>
+  <ruleset id="wizardsRS" name="Expanded Rules for Wizards" description="Additional wizard rules and levels from WD164" default="yes"></ruleset>
   <context id="campaignCX" name="Campaign" type="any">
     <set id="campaignRS"/>
     <legality>1=2</legality>
+    </context>
+  <context id="whteDwrfCX" name="White Dwarf" display="150" type="any">
+    <set id="wizardsRS"/>
     </context>
   <context id="journalCX" name="Citadel journal" display="200" type="any">
     <set id="bloodIrnRS"/>
