@@ -33,4 +33,8 @@
     <tag group="race" tag="darkElves"/>
     </unit>
   <scripts></scripts>
+  <rule id="minDReaver" message="You must have one squadron of Doomreavers in the Fleet" summary="Minimum Doomreavers">
+      <test>roster.darkElves</test>
+      <valid><![CDATA[validif (this.tagcount[unitid.doomreaver] >= 1)]]></valid>
+      </rule>
   </document>

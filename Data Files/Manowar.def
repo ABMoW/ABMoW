@@ -236,7 +236,7 @@ max = tagcount[Group.MenOWar]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="fly1" name="Flyers"  heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <profile id="fly0toSOL" name="Flyers"  heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]
@@ -292,7 +292,7 @@ max = tagcount[Group.ShipOTLine]
   <race id="bretonnian" name="Bretonnians" abbrev="BRET">
     <raceprof id="mow1toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
     <autotag group="gnRoster" tag="canWizard"/>
@@ -316,7 +316,7 @@ max = tagcount[Group.ShipOTLine]
   <race id="empire" name="Empire" abbrev="EMP">
     <raceprof id="mow1toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
     <autotag group="gnRoster" tag="canWizard"/>
@@ -328,7 +328,7 @@ max = tagcount[Group.ShipOTLine]
   <race id="orcs" name="Orcs" abbrev="ORC">
     <raceprof id="mow1toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
     <autotag group="gnRoster" tag="canWizard"/>
@@ -340,7 +340,7 @@ max = tagcount[Group.ShipOTLine]
   <race id="chDwarves" name="Chaos Dwarves" abbrev="CDWF">
     <raceprof id="mow2toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
@@ -377,7 +377,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="mow1"/>
     <raceprof id="sol1plus"/>
     <raceprof id="ind1toSqd"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
     <autotag group="gnRoster" tag="canWizard"/>
