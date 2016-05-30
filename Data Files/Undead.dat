@@ -43,7 +43,7 @@ x = unit.assign[unCrew.tombking]</evaluate>
   <option id="skeleton" name="Skeletons" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
-for n = 1 to unit.option[skeleton].selection*unit.count[model]
+for n = 1 to unit.option[skeleton].selection
 x = unit.assign[unCrew.skeleton]
 next
 
@@ -52,7 +52,7 @@ unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] 
   <option id="wight" name="Wights" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
-for n = 1 to unit.option[wight].selection*unit.count[model]
+for n = 1 to unit.option[wight].selection
 x = unit.assign[unCrew.wight]
 next
 
@@ -61,7 +61,7 @@ unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] 
   <option id="zombie" name="Zombies" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
     <evaluate>var x as number
 var n as number
-for n = 1 to unit.option[zombie].selection*unit.count[model]
+for n = 1 to unit.option[zombie].selection
 x = unit.assign[unCrew.zombie]
 next
 
@@ -81,7 +81,8 @@ x = unit.assign[unCrew.liche]</evaluate>
     <link option="skelArchrs" index="0"></link>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="MenOWar"/>
-    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
     </unit>
   <unit id="necropolis" name="Floating Necropolis" description="Floating Necropolis" cost="250." squadname="Floating Necropolis" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="7"/>
@@ -94,7 +95,8 @@ x = unit.assign[unCrew.liche]</evaluate>
     <link option="skelArchrs" index="0"></link>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="MenOWar"/>
-    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
     </unit>
   <unit id="skullram" name="Skullrammer" description="Skullrammers" cost="83.33333" textcost="250" squadname="Skullrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -104,7 +106,8 @@ x = unit.assign[unCrew.liche]</evaluate>
     <linkref id="undeadCrew"/>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="ShipOTLine"/>
-    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
     </unit>
   <unit id="zombieDrag" name="Zombie Dragon" description="Zombie Dragon" cost="75." idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -130,7 +133,8 @@ x = unit.assign[unCrew.liche]</evaluate>
     <linkref id="undeadCrew"/>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="ShipOTLine"/>
-    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="maxGhost" message="May only have one Ghostship for every Ship of the Line squadron" summary="Maximum Ghostships">
@@ -165,9 +169,16 @@ maxpts = round(roster.usersize/500,0,-1)*crewper500
 
 validif ((overall.tagcount[unCrew.zombie] + overall.tagcount[unCrew.skeleton]*2 + overall.tagcount[unCrew.wight]*3) <= maxpts)]]></valid>
     </rule>
-  <rule id="noCrew" message="Ship is unmanned, it will be considered abandonned." summary="No Crew" scope="unit" severity="warning">
+  <rule id="noCrew" message="Ship is unmanned, it will be considered abandoned." summary="No Crew" scope="unit" severity="warning">
     <test>roster.undead</test>
-    <valid><![CDATA[validif (stat[crew]>0)]]></valid>
+    <valid><![CDATA[var nleft as number
+nleft = count[basic]-stat[crew] 
+
+if (count[basic]>1) then
+@message = "At least " & nleft & " ship(s) in this squadron are unmanned. They will be considered abandoned."
+endif
+
+validif (stat[crew]>=count[basic])]]></valid>
     </rule>
   <statcalc id="mcrewPts" name="Allowed Crew Points">
     <display>roster.undead</display>

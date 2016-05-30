@@ -9,6 +9,7 @@
     <value id="zombie" name="Zombies"/>
     </group>
   <unitstat id="maxCrew" name="Max Crew" showbase="no" private="yes"></unitstat>
+  <unitstat id="maxCrewS" name="Squadron Max Crew" showbase="no" private="yes"></unitstat>
   <exclusion id="admiral" minimum="1" maximum="1" message="Must choose a admiral for the flagship of the fleet"></exclusion>
-  <exclusion id="unCrew" minimum="0" maximum="@maxCrew"></exclusion>
+  <exclusion id="unCrew" minimum="0" maximum="@maxCrewS"></exclusion>
   </document>
