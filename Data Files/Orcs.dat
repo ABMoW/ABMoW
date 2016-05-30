@@ -7,6 +7,7 @@
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="orcs"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="drillakill" name="Drillakilla" cost="50." textcost="150" squadname="Drillakilla Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="1"/>
@@ -14,6 +15,7 @@
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="orcs"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="hulk" name="Hulk" cost="150." squadname="Hulk" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="5"/>
@@ -23,6 +25,7 @@
     <link option="doomdiver" index="0"></link>
     <tag group="race" tag="orcs"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="wyvern" name="Wyvern Rider" cost="50." squadname="Wyvern Rider" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
     <statval stat="honours" value="2"/>
@@ -30,6 +33,7 @@
     <statval stat="wounds" value="3"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="orcs"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="maxChukkas" message="May only have 2 Bigchukka squadrons for each Drillkilla squadron" summary="Maximum Bigchukkas">

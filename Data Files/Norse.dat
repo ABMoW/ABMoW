@@ -7,6 +7,7 @@
     <linkref id="flagship"/>
     <tag group="race" tag="norse"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="longship" name="Longship" cost="50." squadname="Longship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -14,6 +15,7 @@
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="norse"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   </document>

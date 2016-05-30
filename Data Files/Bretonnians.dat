@@ -7,6 +7,7 @@
     <statval stat="honours" value="4"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="bretonnian"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="galleon" name="Galleon" cost="150." squadname="Galleon" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="4"/>
@@ -16,6 +17,7 @@
     <link option="archers" index="0"></link>
     <tag group="race" tag="bretonnian"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="buccaneer" name="Buccaneer" cost="25." textcost="75" squadname="Buccaneer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="1"/>
@@ -23,6 +25,7 @@
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="bretonnian"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="pegasus" name="Pegasus Rider" cost="25." textcost="75" squadname="Pegasus Rider Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="honours" value="1"/>
@@ -30,6 +33,7 @@
     <statval stat="wounds" value="2"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="bretonnian"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="minCorsair" message="Must include at least one squadron of three Corsairs" summary="Minimum Corsairs">

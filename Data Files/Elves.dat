@@ -10,6 +10,7 @@
     <link option="wardancer" index="1"></link>
     <tag group="Group" tag="MenOWar"/>
     <tag group="race" tag="elves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="hawkship" name="Hawkship" cost="50." textcost="150" squadname="Hawkship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="1"/>
@@ -18,6 +19,7 @@
     <link option="wardancer" index="0"></link>
     <tag group="race" tag="elves"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="wareagle" name="War Eagle" cost="25." textcost="75" squadname="War Eagle Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="honours" value="1"/>
@@ -25,6 +27,7 @@
     <statval stat="wounds" value="1"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="elves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="dragonridr" name="Dragon Rider" cost="75." squadname="Dragon Rider" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -32,6 +35,7 @@
     <statval stat="wounds" value="4"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="elves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="dragonship" name="Dragonship" cost="200." squadname="Dragonship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="4"/>
@@ -42,6 +46,7 @@
     <link option="wardancer" index="1"></link>
     <tag group="race" tag="elves"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="maxDragRdr" message="You may only have one Dragon Rider for every Ship of the Line Squadron in the fleet" summary="Maximum Dragon Riders">

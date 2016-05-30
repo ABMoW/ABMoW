@@ -7,6 +7,7 @@
     <statval stat="honours" value="4"/>
     <tag group="Group" tag="Independ"/>
     <tag group="race" tag="darkElves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="doomreaver" name="Doomreaver" cost="50." textcost="150" squadname="Doomreaver Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="0"/>
@@ -14,6 +15,7 @@
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="darkElves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="manticore" name="Manticore Lord" cost="75." squadname="Manticore Lord" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -21,6 +23,7 @@
     <statval stat="wounds" value="3"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="darkElves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="blackArk" name="Black Ark" description="Dark Elf Black Ark of naggaroth" cost="250." squadname="Black Ark" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="6"/>
@@ -31,6 +34,7 @@
     <link option="skyReaper" index="0"></link>
     <tag group="Group" tag="MenOWar"/>
     <tag group="race" tag="darkElves"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="minDReaver" message="You must have one squadron of Doomreavers in the Fleet" summary="Minimum Doomreavers">

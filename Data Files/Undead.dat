@@ -81,6 +81,7 @@ x = unit.assign[unCrew.liche]</evaluate>
     <link option="skelArchrs" index="0"></link>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="necropolis" name="Floating Necropolis" description="Floating Necropolis" cost="250." squadname="Floating Necropolis" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="7"/>
@@ -93,6 +94,7 @@ x = unit.assign[unCrew.liche]</evaluate>
     <link option="skelArchrs" index="0"></link>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="skullram" name="Skullrammer" description="Skullrammers" cost="83.33333" textcost="250" squadname="Skullrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -102,6 +104,7 @@ x = unit.assign[unCrew.liche]</evaluate>
     <linkref id="undeadCrew"/>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="zombieDrag" name="Zombie Dragon" description="Zombie Dragon" cost="75." idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -109,6 +112,7 @@ x = unit.assign[unCrew.liche]</evaluate>
     <statval stat="wounds" value="4"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="undead"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="carrion" name="Carrion" description="Carrion" cost="33.33333" textcost="100" squadname="Carrion Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="honours" value="1"/>
@@ -116,6 +120,7 @@ x = unit.assign[unCrew.liche]</evaluate>
     <statval stat="wounds" value="2"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="undead"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="deathship" name="Deathship" description="Deathships" cost="50." textcost="150" squadname="Deathship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -125,6 +130,7 @@ x = unit.assign[unCrew.liche]</evaluate>
     <linkref id="undeadCrew"/>
     <tag group="race" tag="undead"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="maxGhost" message="May only have one Ghostship for every Ship of the Line squadron" summary="Maximum Ghostships">
