@@ -155,4 +155,24 @@ nClanrats = round(usersize/100,0,-1)*2
 @message = "Invalid number of Clanrats, fleet may only have a total of " & nClanrats & " clanrats"
 validif ( tagcount[skTags.clanrat] <= nClanrats)]]></valid>
     </rule>
+  <statcalc id="rslaves" name="Available Slaves">
+    <display>roster.skaven</display>
+    <test/>
+    <calc>@value = round(usersize/100,0,-1)*2 - overall.tagcount[skTags.slave]</calc>
+    </statcalc>
+  <statcalc id="rclanrat" name="Available Clanrats">
+    <display>roster.skaven</display>
+    <test/>
+    <calc>@value = round(usersize/100,0,-1)*2 - overall.tagcount[skTags.clanrat]</calc>
+    </statcalc>
+  <statcalc id="rstormV" name="Avail. Storm Vermin">
+    <display>roster.skaven</display>
+    <test/>
+    <calc>@value = round(usersize/200,0,-1) - overall.tagcount[skTags.stormVermn]</calc>
+    </statcalc>
+  <statcalc id="rassassin" name="Avail. Assassins">
+      <display>roster.skaven</display>
+      <test/>
+      <calc>@value = round(usersize/500,0,-1) - overall.tagcount[skTags.assassin]</calc>
+      </statcalc>
   </document>

@@ -161,6 +161,8 @@ endif
 
 maxpts = round(roster.usersize/500,0,-1)*crewper500
 
+@message = "Too many crew points used, fleet may only have a total of " & maxpts & " points worth of crew"
+
 validif ((overall.tagcount[unCrew.zombie] + overall.tagcount[unCrew.skeleton]*2 + overall.tagcount[unCrew.wight]*3) <= maxpts)]]></valid>
     </rule>
   <rule id="noCrew" message="Ship is unmanned, it will be considered abandonned." summary="No Crew" scope="unit" severity="warning">
@@ -168,7 +170,7 @@ validif ((overall.tagcount[unCrew.zombie] + overall.tagcount[unCrew.skeleton]*2 
     <valid><![CDATA[validif (stat[crew]>0)]]></valid>
     </rule>
   <statcalc id="mcrewPts" name="Allowed Crew Points">
-    <display/>
+    <display>roster.undead</display>
     <test/>
     <calc><![CDATA[var maxpts as number
 var crewper500 as number
@@ -187,7 +189,7 @@ maxpts = round(roster.usersize/500,0,-1)*crewper500
 @value = maxpts]]></calc>
     </statcalc>
   <statcalc id="ucrewPts" name="Used Crew Points" trimdecimals="yes">
-    <display/>
+    <display>roster.undead</display>
     <test/>
     <calc>@value = (overall.tagcount[unCrew.zombie] + overall.tagcount[unCrew.skeleton]*2 + overall.tagcount[unCrew.wight]*3)</calc>
     </statcalc>
