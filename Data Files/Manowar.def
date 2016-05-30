@@ -30,6 +30,7 @@ Please remember that many scenarios and other rule settings are accessible via t
     <value id="MenOWar" name="Men O&apos;War"/>
     <value id="Monsters" name="Sea Monsters"/>
     <value id="ShipOTLine" name="Ships of the Line"/>
+    <value id="Shorefort"/>
     </group>
   <group id="entity" width="5" name="Nature" visible="no" maxcount="1" mincount="1">
     <value id="item" name="Item"/>
@@ -68,12 +69,18 @@ Please remember that many scenarios and other rule settings are accessible via t
   <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
   <ruleset id="campaignRS" name="Campaign" description="Use Campaign rules"></ruleset>
   <ruleset id="wizardsRS" name="Expanded Rules for Wizards" description="Additional wizard rules and levels from WD164" default="yes"></ruleset>
-  <context id="campaignCX" name="Campaign" type="any">
+  <ruleset id="shrfrtRS" name="Shoreforts" description="Allow shoreforts" default="yes"></ruleset>
+  <ruleset id="shrfrtExRS" name="Expanded Rules for Shoreforts" description="Additional sizes of shoreforts and updated rules from WD167" default="yes"></ruleset>
+  <context id="optionalCX" name="Optional Rules" display="100" type="any">
+    <set id="shrfrtRS"/>
+    </context>
+  <context id="campaignCX" name="Campaign" display="125" type="any">
     <set id="campaignRS"/>
     <legality>1=2</legality>
     </context>
   <context id="whteDwrfCX" name="White Dwarf" display="150" type="any">
     <set id="wizardsRS"/>
+    <set id="shrfrtExRS"/>
     </context>
   <context id="journalCX" name="Citadel journal" display="200" type="any">
     <set id="bloodIrnRS"/>
@@ -250,6 +257,14 @@ max = tagcount[Group.ShipOTLine]
   <profile id="ind1" name="Independents: 1" heading="Independents" minvalue="1" maxvalue="1">
     <qualify>Group.Independ</qualify>
     </profile>
+  <profile id="frt1toSOL" name="Shoreforts: 0+" heading="Shoreforts" dynamic="yes" minvalue="0" maxvalue="0">
+    <qualify>Group.Shorefort</qualify>
+    <minmax>var max as number
+  max = tagcount[Group.ShipOTLine]
+  @maxvalue = max
+  @maxtext = max
+  @maxbar = max</minmax>
+    </profile>
   <race id="tzeentch" name="Chaos: Tzeentch" abbrev="CHS">
     <raceprof id="mow1plus"/>
     <raceprof id="sol1plus"/>
@@ -257,6 +272,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly1perK"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="wngdTerror"/>
@@ -269,6 +285,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol2plus"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="bloodship"/>
@@ -283,6 +300,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly2"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autounit id="dreadnough"/>
     <autounit id="ironclad"/>
     <autounit id="monitor"/>
@@ -295,6 +313,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="galleon"/>
     <autounit id="corsair"/>
@@ -307,6 +326,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly2"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="dragonship"/>
     <autounit id="eagleship"/>
@@ -319,6 +339,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="greatship"/>
     <autounit id="wolfship"/>
@@ -331,6 +352,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="hulk"/>
     <autounit id="drillakill"/>
@@ -343,6 +365,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="thundrfire"/>
     <autounit id="grtLevellr"/>
@@ -355,6 +378,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol1toMow"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="kingship"/>
     <autounit id="longship"/>
@@ -366,6 +390,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="ind0to1"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="plagueship"/>
@@ -380,6 +405,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="blackArk"/>
     <autounit id="doomreaver"/>
@@ -390,6 +416,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol1plus"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="ptWargally"/>
     <ally>roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.skaven | roster.norse | roster.bretonnian</ally>
@@ -399,6 +426,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol2plus"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="doombringr"/>
     <autounit id="deathburnr"/>
@@ -412,6 +440,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly1perK"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="deathgally"/>
@@ -423,6 +452,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="ind0to1"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="hellship"/>
@@ -436,6 +466,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol1plus"/>
     <raceprof id="fly0"/>
     <raceprof id="seamonster"/>
+    <raceprof id="frt1toSOL"/>
     <autounit id="necropolis"/>
     </race>
   <defaults>
@@ -472,6 +503,11 @@ max = tagcount[Group.ShipOTLine]
       <fltgroup group="Group">
         <flttag tag="ShipOTLine"/>
         </fltgroup>
+      </filter>
+    <filter id="shoreforts" name="Shoreforts" favorite="6">
+      <fltgroup group="Group">
+         <flttag tag="Shorefort"/>
+         </fltgroup>
       </filter>
     </defaults>
   </document>

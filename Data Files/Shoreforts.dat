@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <unit id="bastion" name="Coastal Bastion" cost="250." squadname="Coastal Bastion" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="5"/>
+    <statval stat="honours" value="10"/>
+    <tag group="Group" tag="Shorefort"/>
+    <override index="0" group="race" empty="yes">
+      <condition><![CDATA[roster.orcs & ruleset.shrfrtExRS]]></condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition><![CDATA[roster.skaven & ruleset.shrfrtExRS]]></condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition><![CDATA[roster.bretonnian & ruleset.shrfrtExRS]]></condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition><![CDATA[roster.chDwarves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition><![CDATA[roster.khorne & ruleset.shrfrtExRS]]></condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition><![CDATA[roster.plague & ruleset.shrfrtExRS]]></condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition><![CDATA[roster.slaanesh & ruleset.shrfrtExRS]]></condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition><![CDATA[roster.tzeentch & ruleset.shrfrtExRS]]></condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition><![CDATA[roster.darkElves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition><![CDATA[roster.dwarves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition><![CDATA[roster.elves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition><![CDATA[roster.empire & ruleset.shrfrtExRS]]></condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition><![CDATA[roster.norse & ruleset.shrfrtExRS]]></condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition><![CDATA[roster.pirates & ruleset.shrfrtExRS]]></condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition><![CDATA[roster.nurgle & ruleset.shrfrtExRS]]></condition>
+      <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition><![CDATA[roster.undead & ruleset.shrfrtExRS]]></condition>
+      <tagover id="undead"/>
+      </override>
+    </unit>
+  <unit id="defTower" name="Defence Tower" cost="50." squadname="Defence Tower" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="1"/>
+    <statval stat="honours" value="2"/>
+    <tag group="Group" tag="Shorefort"/>
+    <override index="0" group="race" empty="yes">
+      <condition><![CDATA[roster.orcs & ruleset.shrfrtExRS]]></condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition><![CDATA[roster.skaven & ruleset.shrfrtExRS]]></condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition><![CDATA[roster.bretonnian & ruleset.shrfrtExRS]]></condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition><![CDATA[roster.chDwarves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition><![CDATA[roster.khorne & ruleset.shrfrtExRS]]></condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition><![CDATA[roster.plague & ruleset.shrfrtExRS]]></condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition><![CDATA[roster.slaanesh & ruleset.shrfrtExRS]]></condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition><![CDATA[roster.tzeentch & ruleset.shrfrtExRS]]></condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition><![CDATA[roster.darkElves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition><![CDATA[roster.dwarves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition><![CDATA[roster.elves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition><![CDATA[roster.empire & ruleset.shrfrtExRS]]></condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition><![CDATA[roster.norse & ruleset.shrfrtExRS]]></condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition><![CDATA[roster.pirates & ruleset.shrfrtExRS]]></condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition><![CDATA[roster.nurgle & ruleset.shrfrtExRS]]></condition>
+      <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition><![CDATA[roster.undead & ruleset.shrfrtExRS]]></condition>
+      <tagover id="undead"/>
+      </override>
+    </unit>
+  <unit id="seaFort" name="Sea Fortress" cost="500." squadname="Sea Fortress" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="10"/>
+    <statval stat="honours" value="20"/>
+    <tag group="Group" tag="Shorefort"/>
+    <override index="0" group="race" empty="yes">
+      <condition><![CDATA[roster.orcs & ruleset.shrfrtExRS]]></condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition><![CDATA[roster.skaven & ruleset.shrfrtExRS]]></condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition><![CDATA[roster.bretonnian & ruleset.shrfrtExRS]]></condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition><![CDATA[roster.chDwarves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition><![CDATA[roster.khorne & ruleset.shrfrtExRS]]></condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition><![CDATA[roster.plague & ruleset.shrfrtExRS]]></condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition><![CDATA[roster.slaanesh & ruleset.shrfrtExRS]]></condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition><![CDATA[roster.tzeentch & ruleset.shrfrtExRS]]></condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition><![CDATA[roster.darkElves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition><![CDATA[roster.dwarves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition><![CDATA[roster.elves & ruleset.shrfrtExRS]]></condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition><![CDATA[roster.empire & ruleset.shrfrtExRS]]></condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition><![CDATA[roster.norse & ruleset.shrfrtExRS]]></condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition><![CDATA[roster.pirates & ruleset.shrfrtExRS]]></condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition><![CDATA[roster.nurgle & ruleset.shrfrtExRS]]></condition>
+      <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition><![CDATA[roster.undead & ruleset.shrfrtExRS]]></condition>
+      <tagover id="undead"/>
+      </override>
+    </unit>
+  <unit id="shorefort" name="Shorefort" cost="150." squadname="Shorefort" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="crew" value="3"/>
+    <statval stat="honours" value="5"/>
+    <tag group="Group" tag="Shorefort"/>
+    <override index="0" group="race" empty="yes">
+      <condition><![CDATA[roster.orcs & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="orcs"/>
+      </override>
+    <override index="1" group="race" empty="yes">
+      <condition><![CDATA[roster.skaven & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="skaven"/>
+      </override>
+    <override index="2" group="race" empty="yes">
+      <condition><![CDATA[roster.bretonnian & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="bretonnian"/>
+      </override>
+    <override index="3" group="race" empty="yes">
+      <condition><![CDATA[roster.chDwarves & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="chDwarves"/>
+      </override>
+    <override index="4" group="race" empty="yes">
+      <condition><![CDATA[roster.khorne & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="khorne"/>
+      </override>
+    <override index="5" group="race" empty="yes">
+      <condition><![CDATA[roster.plague & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="plague"/>
+      </override>
+    <override index="6" group="race" empty="yes">
+      <condition><![CDATA[roster.slaanesh & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="slaanesh"/>
+      </override>
+    <override index="7" group="race" empty="yes">
+      <condition><![CDATA[roster.tzeentch & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="tzeentch"/>
+      </override>
+    <override index="8" group="race" empty="yes">
+      <condition><![CDATA[roster.darkElves & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="darkElves"/>
+      </override>
+    <override index="9" group="race" empty="yes">
+      <condition><![CDATA[roster.dwarves & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="dwarves"/>
+      </override>
+    <override index="10" group="race" empty="yes">
+      <condition><![CDATA[roster.elves & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="elves"/>
+      </override>
+    <override index="11" group="race" empty="yes">
+      <condition><![CDATA[roster.empire & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="empire"/>
+      </override>
+    <override index="12" group="race" empty="yes">
+      <condition><![CDATA[roster.norse & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="norse"/>
+      </override>
+    <override index="13" group="race" empty="yes">
+      <condition><![CDATA[roster.pirates & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="pirates"/>
+      </override>
+    <override index="14" group="race" empty="yes">
+      <condition><![CDATA[roster.nurgle & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition><![CDATA[roster.undead & (ruleset.shrfrtRS | ruleset.shrfrtExRS)]]></condition>
+      <tagover id="undead"/>
+      </override>
+    <override index="16" priority="105" cost="100">
+      <condition><![CDATA[ruleset.shrfrtRS & !ruleset.shrfrtExRS]]></condition>
+      </override>
+    </unit>
+  <scripts></scripts>
+  </document>
