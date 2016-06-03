@@ -26,12 +26,12 @@ Please remember that many scenarios and other rule settings are accessible via t
   <macro id="color1" contents="{text custom1}" terminate="no"></macro>
   <macro id="color2" contents="{text custom2}" terminate="no"></macro>
   <group id="Group" width="16" name="Group" sequence="explicit" accrue="yes">
-    <value id="Flyers"/>
-    <value id="Independ" name="Independent"/>
-    <value id="MenOWar" name="Men O&apos;War"/>
-    <value id="Monsters" name="Sea Monsters"/>
-    <value id="ShipOTLine" name="Ships of the Line"/>
-    <value id="Shorefort"/>
+    <value id="Flyers" order="3"/>
+    <value id="Independ" name="Independent" order="4"/>
+    <value id="MenOWar" name="Men O&apos;War" order="6"/>
+    <value id="Monsters" name="Sea Monsters" order="2"/>
+    <value id="ShipOTLine" name="Ships of the Line" order="5"/>
+    <value id="Shorefort" order="1"/>
     </group>
   <group id="entity" width="5" name="Nature" visible="no" maxcount="1" mincount="1">
     <value id="item" name="Item"/>
@@ -244,7 +244,7 @@ max = tagcount[Group.MenOWar]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="fly0toSOL" name="Flyers"  heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <profile id="fly0toSOL" name="Flyers" heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]
@@ -472,7 +472,16 @@ max = tagcount[Group.ShipOTLine]
     </race>
   <defaults>
     <sortset id="defaultSRT" name="DefaultSort" group1="Group" group2="_Name_" default="yes"></sortset>
-    <view id="defaultV" name="Default" default="yes" context="avail+roster+output" roster="yes" output="yes">
+    <view id="defaultA" name="Default" default="yes" context="avail+output" output="yes">
+      <column group="honours"/>
+      <column group="Group"/>
+      <info group="crew"/>
+      <info group="wounds"/>
+      <info group="move"/>
+      <info group="save"/>
+      <info group="tohit"/>
+      </view>
+    <view id="defaultR" name="Default" context="roster" roster="yes">
       <column group="honours"/>
       <info group="crew"/>
       <info group="wounds"/>
@@ -507,8 +516,8 @@ max = tagcount[Group.ShipOTLine]
       </filter>
     <filter id="shoreforts" name="Shoreforts" favorite="6">
       <fltgroup group="Group">
-         <flttag tag="Shorefort"/>
-         </fltgroup>
+        <flttag tag="Shorefort"/>
+        </fltgroup>
       </filter>
     </defaults>
   </document>
