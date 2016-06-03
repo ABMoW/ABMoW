@@ -2,10 +2,10 @@
 <document signature="Army Builder Data">
   <linkset id="flagship">
       <link option="gnSpace" priority="422" index="5">
-        <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
+        <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS)]]></live>
         </link>
       <link option="gnHeader" name="{macro color1} -- Wizard --{text 010101}" priority="423" cost="0." index="1">
-        <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
+        <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS)]]></live>
         </link>
       <link option="gnSpace" priority="502" index="7">
         <live><![CDATA[gnTags.isFlagship & !gnRoster.noMoWCards]]></live>
@@ -40,25 +40,25 @@
       <live>!ally.?</live>
       </linkset>
     <option id="wzChamp" name="Wizard Champion" abbrev="" category="flagship" priority="424" cost="50">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS)]]></live>
       </option>
     <option id="wzLord" name="Wizard Lord" abbrev="" category="flagship" priority="427" cost="150">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS)]]></live>
       </option>
     <option id="wzMaster" name="Wizard Master" abbrev="" category="flagship" priority="425" cost="100">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS)]]></live>
       </option>
     <option id="wizGLord" name="Grand Wizard Lord" abbrev="" category="flagship" priority="430" cost="200">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & ruleset.wizardsRS]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS) & ruleset.wizardsRS]]></live>
       </option>
     <option id="wzHChamp" name="High Wizard Champion" abbrev="" category="flagship" priority="425" cost="75">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & ruleset.wizardsRS]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS) & ruleset.wizardsRS]]></live>
       </option>
     <option id="wzHLord" name="High Wizard Lord" abbrev="" category="flagship" priority="429" cost="175">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & ruleset.wizardsRS]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS) & ruleset.wizardsRS]]></live>
       </option>
     <option id="wzHMaster" name="High Master Wizard" abbrev="" category="flagship" priority="426" cost="125">
-      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & ruleset.wizardsRS]]></live>
+      <live><![CDATA[gnTags.isFlagship & gnRoster.canWizard & !(roster.orcs & ruleset.weRSailnRS) & ruleset.wizardsRS]]></live>
       </option>
     <option id="flagship" name="{B}Flagship{/B}" abbrev="" category="flagship" footnote="yes" priority="401" cost="0" textcost=" ">
       <evaluate>~ Assigning tag to entity allows wizard and other admiral traits

@@ -67,6 +67,7 @@ Please remember that many scenarios and other rule settings are accessible via t
   <ruleset id="standardRS" name="Standard" description="Standard Rules" type="core" default="yes"></ruleset>
   <ruleset id="shpBoatsRS" name="Ships&apos;  Boats" description="Row,Row,Row yer Boat!: Ships&apos; Boats from Citadel Journal Issue 3"></ruleset>
   <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
+  <ruleset id="weRSailnRS" name="We Are Sailin'!" description="We Are Sailin'!: Ork Waaagh Magic and Kustom Ships from Citadel Journal 5"></ruleset>
   <ruleset id="campaignRS" name="Campaign" description="Use Campaign rules"></ruleset>
   <ruleset id="wizardsRS" name="Expanded Rules for Wizards" description="Additional wizard rules and levels from WD164" default="yes"></ruleset>
   <ruleset id="shrfrtRS" name="Shoreforts" description="Allow shoreforts" default="yes"></ruleset>
@@ -85,6 +86,7 @@ Please remember that many scenarios and other rule settings are accessible via t
   <context id="journalCX" name="Citadel journal" display="200" type="any">
     <set id="bloodIrnRS"/>
     <set id="shpBoatsRS"/>
+    <set id="weRSailnRS"/>
     </context>
   <unitstat id="crew" name="Crew" minvalue="0." showbase="no" default="1"></unitstat>
   <unitstat id="wounds" name="Wounds" minvalue="0."></unitstat>

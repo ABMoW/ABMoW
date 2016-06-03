@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <document signature="Army Builder Data">
+  <linkset id="mowShaman">
+    <link option="gobBShaman" index="2">
+      <exclref id="wizard"/>
+      </link>
+    <link option="gobShaman" index="0">
+      <exclref id="wizard"/>
+      </link>
+    <link option="orcShaman" index="1">
+      <exclref id="wizard"/>
+      </link>
+    <live><![CDATA[!gnTags.isFlagship & !ally.?  & ruleset.weRSailnRS]]></live>
+    </linkset>
+  <linkset id="flagShaman">
+    <link option="gnSpace" priority="422" index="5"></link>
+    <link option="gnHeader" name="{macro color1} -- Shaman --{text 010101}" priority="423" index="6"></link>
+    <link option="gobBShaman" category="flagship" index="2">
+      <exclref id="wizard"/>
+      </link>
+    <link option="gobShaman" category="flagship" index="0">
+      <exclref id="wizard"/>
+      </link>
+    <link option="orcBShaman" category="flagship" index="3">
+      <exclref id="wizard"/>
+      </link>
+    <link option="orcShaman" category="flagship" index="1">
+      <exclref id="wizard"/>
+      </link>
+    <link option="shamanLord" category="flagship" index="4">
+      <exclref id="wizard"/>
+      </link>
+    <live><![CDATA[gnTags.isFlagship & !ally.?  & ruleset.weRSailnRS]]></live>
+    </linkset>
+  <option id="gobShaman" name="Goblin Shaman" abbrev="" category="crew" priority="424" cost="25" costtype="single">
+    <live>ruleset.weRSailnRS</live>
+    </option>
+  <option id="gobBShaman" name="Goblin Boss Shaman" abbrev="" category="crew" priority="426" cost="75" costtype="single">
+    <live>ruleset.weRSailnRS</live>
+    </option>
+  <option id="orcBShaman" name="Orc Boss Shaman" abbrev="" category="flagship" priority="427" cost="100" costtype="single">
+    <live>ruleset.weRSailnRS</live>
+    </option>
+  <option id="orcShaman" name="Orc Shaman" abbrev="" category="crew" priority="425" cost="50" costtype="single">
+    <live>ruleset.weRSailnRS</live>
+    </option>
+  <option id="shamanLord" name="Orc Shaman Lord" abbrev="" category="flagship" priority="428" cost="125" costtype="single">
+    <live>ruleset.weRSailnRS</live>
+    </option>
   <option id="doomdiver" name="Goblin Doomdiver" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="bigchukka" name="Bigchukka" cost="25." textcost="75" squadname="Bigchukka Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="1"/>
@@ -13,6 +60,7 @@
     <statval stat="blwWater" value="1"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="1"/>
+    <link option="gobShaman" index="0"></link>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="orcs"/>
     <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
@@ -22,6 +70,8 @@
     <statval stat="crew" value="5"/>
     <statval stat="honours" value="6"/>
     <linkref id="flagship"/>
+    <linkref id="mowShaman"/>
+    <linkref id="flagShaman"/>
     <link option="doomdiver" index="0"></link>
     <tag group="race" tag="orcs"/>
     <tag group="Group" tag="MenOWar"/>
