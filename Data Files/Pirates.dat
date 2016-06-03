@@ -7,6 +7,7 @@
     <linkref id="flagship"/>
     <tag group="race" tag="pirates"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   </document>

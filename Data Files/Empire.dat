@@ -7,6 +7,7 @@
     <statval stat="wounds" value="2"/>
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="empire"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="greatship" name="Greatship" description="Imperial Greatship" cost="150." squadname="Greatship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="4"/>
@@ -16,6 +17,7 @@
     <link option="hellblastr" index="0"></link>
     <tag group="race" tag="empire"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="hellhammer" name="Hell-hammer" description="Imperial Hell-hammers" cost="50." textcost="150" squadname="Hell-hammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -23,6 +25,7 @@
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="ironfist" name="Ironfist" description="Imperial Ironfists" cost="25." textcost="75" squadname="Ironfist Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -30,6 +33,7 @@
     <statval stat="honours" value="1"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="schmidt" name="Schmidt&apos;s Renegades(Ironfist)" description="Schmidt&apos;s renegades Ironfists" cost="25." textcost="75" squadname="Schmidt&apos;s Renegades" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -92,6 +96,11 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="wolfship" name="Wolfship" description="Imperial Wolfships" cost="100." textcost="300" squadname="Wolfship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="3"/>
@@ -99,6 +108,7 @@
     <statval stat="honours" value="4"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="wargalley" name="Wargalley" description="Imperial Wargalleys" cost="50." textcost="150" squadname="Wargalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -106,6 +116,7 @@
     <statval stat="honours" value="2"/>
     <tag group="Group" tag="ShipOTLine"/>
     <tag group="race" tag="empire"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="minWolfs" message="Must include at least one squadron of three Wolfships" summary="Minimum Wolfships">

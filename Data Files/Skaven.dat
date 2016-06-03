@@ -94,6 +94,7 @@ unit.stat[crew] = unit.tagcount[skTags.clanrat]+unit.tagcount[skTags.stormVermn]
     <linkref id="skCrew"/>
     <tag group="race" tag="skaven"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="deathburnr" name="Deathburner" cost="50." textcost="150" squadname="Deathburner Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -103,6 +104,7 @@ unit.stat[crew] = unit.tagcount[skTags.clanrat]+unit.tagcount[skTags.stormVermn]
     <link option="chReward" display="200" rangemax="6" costtype="single" index="0"></link>
     <tag group="race" tag="skaven"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="doombringr" name="Doombringer" cost="200." squadname="Doombringer" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="4"/>
@@ -114,6 +116,7 @@ unit.stat[crew] = unit.tagcount[skTags.clanrat]+unit.tagcount[skTags.stormVermn]
     <link option="firethrowr" index="0"></link>
     <tag group="race" tag="skaven"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="maxSlaves" message="Invalid number of Slaves" summary="Too many slaves">
@@ -152,4 +155,24 @@ nClanrats = round(usersize/100,0,-1)*2
 @message = "Invalid number of Clanrats, fleet may only have a total of " & nClanrats & " clanrats"
 validif ( tagcount[skTags.clanrat] <= nClanrats)]]></valid>
     </rule>
+  <statcalc id="rslaves" name="Available Slaves">
+    <display>roster.skaven</display>
+    <test/>
+    <calc>@value = round(usersize/100,0,-1)*2 - overall.tagcount[skTags.slave]</calc>
+    </statcalc>
+  <statcalc id="rclanrat" name="Available Clanrats">
+    <display>roster.skaven</display>
+    <test/>
+    <calc>@value = round(usersize/100,0,-1)*2 - overall.tagcount[skTags.clanrat]</calc>
+    </statcalc>
+  <statcalc id="rstormV" name="Avail. Storm Vermin">
+    <display>roster.skaven</display>
+    <test/>
+    <calc>@value = round(usersize/200,0,-1) - overall.tagcount[skTags.stormVermn]</calc>
+    </statcalc>
+  <statcalc id="rassassin" name="Avail. Assassins">
+      <display>roster.skaven</display>
+      <test/>
+      <calc>@value = round(usersize/500,0,-1) - overall.tagcount[skTags.assassin]</calc>
+      </statcalc>
   </document>

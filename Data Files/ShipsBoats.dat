@@ -10,10 +10,10 @@
     <link option="lifeBoat" priority="912" rangemax="100" index="2">
       <exclref id="shpBoatsEx"/>
       </link>
-    <live><![CDATA[ruleset.shpBoatsRS & (Group.MenOWar | Group.ShipOTLine | Group.Independ) & (!runtime.blwWater0)]]></live>
+    <live><![CDATA[ruleset.shpBoatsRS & (!runtime.blwWater0)]]></live>
     </linkset>
-  <option id="bombBoat" name="Bomb-Boat" abbrev="" category="shpBoatsCt" priority="0" cost="25"></option>
-  <option id="lifeBoat" name="Lifeboat" abbrev="" category="shpBoatsCt" priority="0" cost="25"></option>
-  <option id="raidBoat" name="Raiding Boat" abbrev="" category="shpBoatsCt" priority="0" cost="25"></option>
+  <option id="bombBoat" name="Bomb-Boat" abbrev="" category="shpBoatsCt" priority="0" cost="25" costtype="single"></option>
+  <option id="lifeBoat" name="Lifeboat" abbrev="" category="shpBoatsCt" priority="0" cost="25" costtype="single"></option>
+  <option id="raidBoat" name="Raiding Boat" abbrev="" category="shpBoatsCt" priority="0" cost="25" costtype="single"></option>
   <scripts></scripts>
   </document>

@@ -2,15 +2,16 @@
 <document signature="Army Builder Definition">
   <game game="Man O&apos;War" publisher="Games Workshop" website="http://www.games-workshop.com" copyright="(c) Games Workshop" deflang="en" languages="en"/>
   <author author="Aaron" email="abmow@yahoo.com" website="http://github.com/ABMoW/ABMoW"/>
-  <release major="1" minor="0" required="3.5"><![CDATA[{macro color2}{b}Welcome to v1.0 of the Man O'War files for Army Builder 3.x{/b}{text 010101}
+  <release major="1" minor="1" required="3.5"><![CDATA[{macro color2}{b}Welcome to v1.0 of the Man O'War files for Army Builder 3.x{/b}{text 010101}
 
 {b}Important Disclaimer{/b}
 The data file you are about to open was created by volunteers, neither employed by nor affiliated with Lone Wolf Development, LLC.  The data file authors work without compensation and have made this data file available for non-commercial purposes only.  The data files are provided solely for the purposes of enhancing your enjoyment of Games Workshop's products, including but not limited to evaluation, educational purposes, and providing legitimate purchasers of the original copyrighted works with a less cumbersome means to play Warhammer, Warhammer 40k and other Games Workshop games.  No challenge to Games Workshop's copyrights is intended, and the authors have taken pains to include only so much of the game mechanics as will allow users of the Army Builder(R) Brand of roster creation software to create rosters more efficiently than they otherwise could when armed with paper, pencil and a pocket calculator.  You will not find game rules in these data files, and thus you will not be able to play Warhammer, Warhammer 40k and other Games Workshop games unless you have obtained the corresponding rule books.  If you do not legally own a copy of the appropriate rule book(s) you are instructed to discontinue your use of these data files and delete them immediately following your evaluation and/or critique of the game system.  These data files are not endorsed by Games Workshop.  Games Workshop trademarks as used herein refer to Games Workshop's products and no affiliation with Games Workshop is implied or should be assumed.  Your use of this data file is at your own risk and all warranties are explicitly disclaimed.  Clicking "OK" below indicates your acceptance of these terms.
 
-In this release: Installation Documentation hotfix.
+In this release: Undead, expanded wizards, and Shoreforts!
 
 {b}AB MoW Files Revision History:{/b}
-1.0: Initial datafile release]]>
+1.0: Initial datafile release
+1.1: Undead, expanded wizards, and Shoreforts!]]>
     <launch><![CDATA[{b}Welcome to the Man O'War data files!{/b}
 
 For more info on how to use the files please go to the address below or from within AB: Help > Visit Datafile Authors Website
@@ -25,11 +26,12 @@ Please remember that many scenarios and other rule settings are accessible via t
   <macro id="color1" contents="{text custom1}" terminate="no"></macro>
   <macro id="color2" contents="{text custom2}" terminate="no"></macro>
   <group id="Group" width="16" name="Group" sequence="explicit" accrue="yes">
-    <value id="Flyers"/>
-    <value id="Independ" name="Independent"/>
-    <value id="MenOWar" name="Men O&apos;War"/>
-    <value id="Monsters" name="Sea Monsters"/>
-    <value id="ShipOTLine" name="Ships of the Line"/>
+    <value id="Flyers" order="3"/>
+    <value id="Independ" name="Independent" order="4"/>
+    <value id="MenOWar" name="Men O&apos;War" order="6"/>
+    <value id="Monsters" name="Sea Monsters" order="2"/>
+    <value id="ShipOTLine" name="Ships of the Line" order="5"/>
+    <value id="Shorefort" order="1"/>
     </group>
   <group id="entity" width="5" name="Nature" visible="no" maxcount="1" mincount="1">
     <value id="item" name="Item"/>
@@ -67,9 +69,19 @@ Please remember that many scenarios and other rule settings are accessible via t
   <ruleset id="shpBoatsRS" name="Ships&apos;  Boats" description="Row,Row,Row yer Boat!: Ships&apos; Boats from Citadel Journal Issue 3"></ruleset>
   <ruleset id="bloodIrnRS" name="Blood and Iron" description="Blood and Iron: Dwarf Runesmiths &amp; Engineers from Citadel Journal 1"></ruleset>
   <ruleset id="campaignRS" name="Campaign" description="Use Campaign rules"></ruleset>
-  <context id="campaignCX" name="Campaign" type="any">
+  <ruleset id="wizardsRS" name="Expanded Rules for Wizards" description="Additional wizard rules and levels from WD164" default="yes"></ruleset>
+  <ruleset id="shrfrtRS" name="Shoreforts" description="Allow shoreforts" default="yes"></ruleset>
+  <ruleset id="shrfrtExRS" name="Expanded Rules for Shoreforts" description="Additional sizes of shoreforts and updated rules from WD167" default="yes"></ruleset>
+  <context id="optionalCX" name="Optional Rules" display="100" type="any">
+    <set id="shrfrtRS"/>
+    </context>
+  <context id="campaignCX" name="Campaign" display="125" type="any">
     <set id="campaignRS"/>
     <legality>1=2</legality>
+    </context>
+  <context id="whteDwrfCX" name="White Dwarf" display="150" type="any">
+    <set id="wizardsRS"/>
+    <set id="shrfrtExRS"/>
     </context>
   <context id="journalCX" name="Citadel journal" display="200" type="any">
     <set id="bloodIrnRS"/>
@@ -109,8 +121,8 @@ Please remember that many scenarios and other rule settings are accessible via t
   <category id="option" name="Options" default="yes" leader="yes"></category>
   <category id="crew" name="Crew"></category>
   <exclusion id="flagship" minimum="1" maximum="1" message="Must have exactly one flagship"></exclusion>
-  <exclusion id="wizard" minimum="0" maximum="1" message="Can only have one wizard in the army"></exclusion>
-  <profile id="fly1perK" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <exclusion id="wizard" minimum="0" maximum="1" message="Can only have one wizard in the fleet"></exclusion>
+  <profile id="fly1perK" name="Flyers" heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = round(roster.usersize/1000,0,-1)
@@ -118,7 +130,7 @@ max = round(roster.usersize/1000,0,-1)
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="ally" name="Ally" dynamic="yes" minvalue="0" maxvalue="0" maxbar="100">
+  <profile id="ally" name="Ally" heading="Allies" dynamic="yes" minvalue="0" maxvalue="0" maxbar="100">
     <qualify>ally.?</qualify>
     <finaltest><![CDATA[var max as number
 max = roster.usersize/3.0
@@ -136,7 +148,7 @@ max = tagcount[Group.MenOWar]*2
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="mow1toSOLp" name="Men O&apos;War: 1+" heading="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="mow1toSOLp" name="Men O&apos;War: 1+" heading="Men O&apos;War" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]+1
@@ -144,7 +156,7 @@ max = tagcount[Group.ShipOTLine]+1
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="mow2toSOLp" name="Men O&apos;War: 2+" dynamic="yes" minvalue="2" maxvalue="0">
+  <profile id="mow2toSOLp" name="Men O&apos;War: 2+" heading="Men O&apos;War" dynamic="yes" minvalue="2" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = 2*(tagcount[Group.ShipOTLine]+1)
@@ -155,7 +167,7 @@ max = 2*(tagcount[Group.ShipOTLine]+1)
   <profile id="mow1plus" name="Men O&apos;War: 1+" heading="Men O&apos;War" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     </profile>
-  <profile id="mow1perK" name="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="mow1perK" name="Men O&apos;War: 1+" heading="Men O&apos;War" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = round(roster.usersize/1000,0,-1)
@@ -171,7 +183,7 @@ max = tagcount[Group.ShipOTLine] + tagcount[Group.MenOWar]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="ind0to1" name="Independents: 0-1" minvalue="0" maxvalue="1">
+  <profile id="ind0to1" name="Independents: 0-1" heading="Independents" minvalue="0" maxvalue="1">
     <qualify>Group.Independ</qualify>
     </profile>
   <profile id="ind1plus" name="Independents: 1+" heading="Independents" minvalue="1" maxvalue="0">
@@ -180,7 +192,7 @@ max = tagcount[Group.ShipOTLine] + tagcount[Group.MenOWar]
   <profile id="mow1" name="Men O&apos;War: 1" heading="Men O&apos;War" minvalue="1" maxvalue="1">
     <qualify>Group.MenOWar</qualify>
     </profile>
-  <profile id="mow1toSOL" name="Men O&apos;War: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="mow1toSOL" name="Men O&apos;War: 1+" heading="Men O&apos;War" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.MenOWar</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]
@@ -191,7 +203,7 @@ max = tagcount[Group.ShipOTLine]
   <profile id="sol1plus" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" minvalue="1" maxvalue="0">
     <qualify>Group.ShipOTLine</qualify>
     </profile>
-  <profile id="sol1toMow" name="Ship of the Line Squadrons: 1+" dynamic="yes" minvalue="1" maxvalue="0">
+  <profile id="sol1toMow" name="Ship of the Line Squadrons: 1+" heading="Ship of the Line Squadrons" dynamic="yes" minvalue="1" maxvalue="0">
     <qualify>Group.ShipOTLine</qualify>
     <minmax>var max as number
 max = tagcount[Group.MenOWar]
@@ -213,7 +225,7 @@ max = tagcount[Group.ShipOTLine]
   <profile id="sol2plus" name="Ship of the Line Squadrons: 2+" heading="Ship of the Line Squadrons" minvalue="2" maxvalue="0">
     <qualify>Group.ShipOTLine</qualify>
     </profile>
-  <profile id="fly2" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <profile id="fly2" name="Flyers" heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]*2
@@ -232,7 +244,7 @@ max = tagcount[Group.MenOWar]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="fly1" name="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
+  <profile id="fly0toSOL" name="Flyers" heading="Flyers" dynamic="yes" minvalue="0" maxvalue="0">
     <qualify>Group.Flyers</qualify>
     <minmax>var max as number
 max = tagcount[Group.ShipOTLine]
@@ -240,8 +252,19 @@ max = tagcount[Group.ShipOTLine]
 @maxtext = max
 @maxbar = max</minmax>
     </profile>
-  <profile id="ind1" name="Independents: 1" minvalue="1" maxvalue="1">
+  <profile id="fly0" name="Flyers: 0+" heading="Flyers" minvalue="0" maxvalue="0">
+    <qualify>Group.Flyers</qualify>
+    </profile>
+  <profile id="ind1" name="Independents: 1" heading="Independents" minvalue="1" maxvalue="1">
     <qualify>Group.Independ</qualify>
+    </profile>
+  <profile id="frt1toSOL" name="Shoreforts: 0+" heading="Shoreforts" dynamic="yes" minvalue="0" maxvalue="0">
+    <qualify>Group.Shorefort</qualify>
+    <minmax>var max as number
+  max = tagcount[Group.ShipOTLine]
+  @maxvalue = max
+  @maxtext = max
+  @maxbar = max</minmax>
     </profile>
   <race id="tzeentch" name="Chaos: Tzeentch" abbrev="CHS">
     <raceprof id="mow1plus"/>
@@ -250,6 +273,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly1perK"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="wngdTerror"/>
@@ -262,6 +286,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol2plus"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="bloodship"/>
@@ -276,6 +301,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly2"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autounit id="dreadnough"/>
     <autounit id="ironclad"/>
     <autounit id="monitor"/>
@@ -285,9 +311,10 @@ max = tagcount[Group.ShipOTLine]
   <race id="bretonnian" name="Bretonnians" abbrev="BRET">
     <raceprof id="mow1toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="galleon"/>
     <autounit id="corsair"/>
@@ -300,6 +327,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly2"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="dragonship"/>
     <autounit id="eagleship"/>
@@ -309,9 +337,10 @@ max = tagcount[Group.ShipOTLine]
   <race id="empire" name="Empire" abbrev="EMP">
     <raceprof id="mow1toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="greatship"/>
     <autounit id="wolfship"/>
@@ -321,9 +350,10 @@ max = tagcount[Group.ShipOTLine]
   <race id="orcs" name="Orcs" abbrev="ORC">
     <raceprof id="mow1toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="hulk"/>
     <autounit id="drillakill"/>
@@ -333,9 +363,10 @@ max = tagcount[Group.ShipOTLine]
   <race id="chDwarves" name="Chaos Dwarves" abbrev="CDWF">
     <raceprof id="mow2toSOLp"/>
     <raceprof id="sol2plus"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="thundrfire"/>
     <autounit id="grtLevellr"/>
@@ -348,6 +379,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol1toMow"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="kingship"/>
     <autounit id="longship"/>
@@ -359,6 +391,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="ind0to1"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="plagueship"/>
@@ -370,9 +403,10 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="mow1"/>
     <raceprof id="sol1plus"/>
     <raceprof id="ind1toSqd"/>
-    <raceprof id="fly1"/>
+    <raceprof id="fly0toSOL"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="blackArk"/>
     <autounit id="doomreaver"/>
@@ -383,6 +417,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol1plus"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="canWizard"/>
     <autounit id="ptWargally"/>
     <ally>roster.orcs | roster.darkElves | roster.chDwarves | gnRoster.isChaos | roster.skaven | roster.norse | roster.bretonnian</ally>
@@ -392,6 +427,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="sol2plus"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="doombringr"/>
     <autounit id="deathburnr"/>
@@ -405,6 +441,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="fly1perK"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="deathgally"/>
@@ -416,6 +453,7 @@ max = tagcount[Group.ShipOTLine]
     <raceprof id="ind0to1"/>
     <raceprof id="seamonster"/>
     <raceprof id="ally"/>
+    <raceprof id="frt1toSOL"/>
     <autotag group="gnRoster" tag="isChaos"/>
     <autotag group="gnRoster" tag="noMoWCards"/>
     <autounit id="hellship"/>
@@ -424,9 +462,26 @@ max = tagcount[Group.ShipOTLine]
     <autounit id="deathgally"/>
     <ally>roster.orcs | roster.darkElves | roster.chDwarves | roster.pirates | roster.skaven | roster.norse</ally>
     </race>
+  <race id="undead" name="Undead" abbrev="UND">
+    <raceprof id="mow1toSOLp"/>
+    <raceprof id="sol1plus"/>
+    <raceprof id="fly0"/>
+    <raceprof id="seamonster"/>
+    <raceprof id="frt1toSOL"/>
+    <autounit id="necropolis"/>
+    </race>
   <defaults>
     <sortset id="defaultSRT" name="DefaultSort" group1="Group" group2="_Name_" default="yes"></sortset>
-    <view id="defaultV" name="Default" default="yes" context="avail+roster+output" roster="yes" output="yes">
+    <view id="defaultA" name="Default" default="yes" context="avail+output" output="yes">
+      <column group="honours"/>
+      <column group="Group"/>
+      <info group="crew"/>
+      <info group="wounds"/>
+      <info group="move"/>
+      <info group="save"/>
+      <info group="tohit"/>
+      </view>
+    <view id="defaultR" name="Default" context="roster" roster="yes">
       <column group="honours"/>
       <info group="crew"/>
       <info group="wounds"/>
@@ -457,6 +512,11 @@ max = tagcount[Group.ShipOTLine]
     <filter id="sol" name="Ships of the Line" favorite="2">
       <fltgroup group="Group">
         <flttag tag="ShipOTLine"/>
+        </fltgroup>
+      </filter>
+    <filter id="shoreforts" name="Shoreforts" favorite="6">
+      <fltgroup group="Group">
+        <flttag tag="Shorefort"/>
         </fltgroup>
       </filter>
     </defaults>

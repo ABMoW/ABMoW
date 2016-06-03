@@ -70,6 +70,10 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
     <member>!(roster.darkElves | roster.orcs | gnRoster.isChaos)</member>
     </unit>
   <unit id="behemoth" name="Behemoth" cost="50." squadname="Behemoth" statset="seamonster" maxsize="1" startsize="1">
@@ -139,6 +143,10 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
     </unit>
   <unit id="elemental" name="Sea Elemental" cost="100." squadname="Sea Elemental" idtag="yes" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="4"/>
@@ -206,6 +214,10 @@
     <override index="14" group="race" empty="yes">
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
       </override>
     </unit>
   <unit id="gargantuan" name="Gargantuan" cost="75." squadname="Gargantuan" statset="seamonster" maxsize="1" startsize="1">
@@ -275,6 +287,10 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
     </unit>
   <unit id="kraken" name="Kraken" cost="50." squadname="Kraken" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="2"/>
@@ -342,6 +358,10 @@
     <override index="14" group="race" empty="yes">
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
       </override>
     </unit>
   <unit id="leviathan" name="Black Leviathan" cost="100." squadname="Black Leviathan" statset="seamonster" maxsize="1" startsize="1">
@@ -411,6 +431,10 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
     </unit>
   <unit id="megaladon" name="Megaladon" cost="50." squadname="Megaladon" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -478,6 +502,10 @@
     <override index="14" group="race" empty="yes">
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
       </override>
     </unit>
   <unit id="promethean" name="Promethean" cost="75." squadname="Promethean" statset="seamonster" maxsize="1" startsize="1">
@@ -547,6 +575,10 @@
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
       </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
+      </override>
     </unit>
   <unit id="sea_dragon" name="Sea Dragon" cost="75." squadname="Sea Dragon" statset="seamonster" maxsize="1" startsize="1">
     <statval stat="honours" value="3"/>
@@ -614,6 +646,10 @@
     <override index="14" group="race" empty="yes">
       <condition>roster.nurgle</condition>
       <tagover id="nurgle"/>
+      </override>
+    <override index="15" group="race" empty="yes">
+      <condition>roster.undead</condition>
+      <tagover id="undead"/>
       </override>
     </unit>
   <scripts></scripts>

@@ -71,13 +71,13 @@
       <live><![CDATA[Group.MenOWar & ruleset.campaignRS & runtime.crew3]]></live>
       </link>
     </linkset>
-  <option id="chWizard" name="Chaos Sorcerer" abbrev="" category="flagship" priority="0" cost="150"></option>
+  <option id="chWizard" name="Chaos Sorcerer" abbrev="" category="flagship" priority="0" cost="150" textcost=" "></option>
   <option id="chReward" name="Chaos Reward" abbrev="" category="option" priority="0" cost="25"></option>
-  <option id="chCultists" name="Chaos Cultists" abbrev="" category="crew" priority="11" nature="free" cost="0"></option>
-  <option id="chWarriors" name="Chaos Warriors" abbrev="" category="crew" priority="13" nature="free" cost="0"></option>
-  <option id="chBeastmen" name="Beastmen" abbrev="" category="crew" priority="12" nature="free" cost="0"></option>
-  <option id="chKnights" name="Chaos Knights" abbrev="" category="crew" priority="14" nature="free" cost="0"></option>
-  <option id="chSpawn" name="Chaos Spawn" abbrev="" category="crew" priority="10" nature="free" cost="0"></option>
+  <option id="chCultists" name="Chaos Cultists" abbrev="" category="crew" priority="11" nature="free" cost="0" textcost=" "></option>
+  <option id="chWarriors" name="Chaos Warriors" abbrev="" category="crew" priority="13" nature="free" cost="0" textcost=" "></option>
+  <option id="chBeastmen" name="Beastmen" abbrev="" category="crew" priority="12" nature="free" cost="0" textcost=" "></option>
+  <option id="chKnights" name="Chaos Knights" abbrev="" category="crew" priority="14" nature="free" cost="0" textcost=" "></option>
+  <option id="chSpawn" name="Chaos Spawn" abbrev="" category="crew" priority="10" nature="free" cost="0" textcost=" "></option>
   <option id="iconOfPowr" name="Icon of Power" abbrev="" category="antiflyer" priority="0" cost="25"></option>
   <unit id="ironshark" name="Ironshark" cost="50." textcost="150" squadname="Ironshark Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -87,6 +87,7 @@
     <tag group="race" tag="khorne"/>
     <tag group="race" tag="plague"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="plaguecrsh" name="Plaguecrusher" cost="50." textcost="150" squadname="Plaguecrusher Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -96,6 +97,7 @@
     <tag group="race" tag="nurgle"/>
     <tag group="race" tag="plague"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="baneTower" name="Bane Tower of Tzeentch" cost="200." squadname="Bane Tower of Tzeentch" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="0"/>
@@ -106,16 +108,18 @@
     <tagref id="allChaos"/>
     <tag group="Group" tag="Independ"/>
     <member>!roster.khorne</member>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="deathgally" name="Deathgalley" cost="66.66666" textcost="200" squadname="Deathgalley Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
     <statval stat="crew" value="2"/>
     <statval stat="honours" value="2"/>
     <linkref id="chCrews"/>
-    <link option="chReward" nature="include" index="1"></link>
-    <link option="chReward" rangemax="3" costtype="single" index="0"></link>
+    <link option="chReward" display="203" nature="include" textcost="Free" index="1"></link>
+    <link option="chReward" display="205" rangemax="3" costtype="single" index="0"></link>
     <tagref id="allChaos"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="hellrammer" name="Hellrammer" cost="25." textcost="75" squadname="Hellrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -125,6 +129,7 @@
     <tag group="race" tag="plague"/>
     <tag group="race" tag="slaanesh"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="hellslicer" name="Hellslicer" cost="25." textcost="75" squadname="Hellslicer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="2"/>
@@ -134,6 +139,7 @@
     <tag group="race" tag="plague"/>
     <tag group="race" tag="slaanesh"/>
     <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="lordOfChng" name="Lord of Change" cost="100." squadname="Lord of Change" idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
     <statval stat="honours" value="4"/>
@@ -142,6 +148,7 @@
     <tag group="Group" tag="Flyers"/>
     <tag group="race" tag="plague"/>
     <tag group="race" tag="tzeentch"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="bloodship" name="Khorne Bloodship" cost="150." squadname="Khorne Bloodship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="4"/>
@@ -152,6 +159,7 @@
     <link option="chReward" index="0"></link>
     <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="hellship" name="Slaanesh Hellship" cost="150." squadname="Slaanesh Hellship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="3"/>
@@ -163,6 +171,7 @@
     <link option="chReward" index="1"></link>
     <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="plagueship" name="Nurgle Plagueship" cost="150." squadname="Nurgle Plagueship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="3"/>
@@ -174,6 +183,7 @@
     <link option="chReward" index="1"></link>
     <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <unit id="wngdTerror" name="Tzeentch Great Winged Terror" cost="150." squadname="Tzeentch Great Winged Terror" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
     <statval stat="blwWater" value="0"/>
@@ -185,6 +195,7 @@
     <link option="chReward" index="1"></link>
     <tagref id="allChaos"/>
     <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
     </unit>
   <scripts></scripts>
   <rule id="plagueMoW" message="May not have a second Man O&apos;War of one Chaos Power until you have at least one of each" summary="Plaguefleet MoW Diversity">

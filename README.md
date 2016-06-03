@@ -18,7 +18,7 @@ Download the project zip file and unzip into a temporary directory.  Rename the 
 ### Development Installation
 Clone the project to a local directory and run the appropriate following command, substituting the directory you cloned the project to for **\<Cloned Directory\>**
 
-#### Windows
+#### Windows (Run as Admin)
     mklink /J "C:\ProgramData\Army Builder\data\Manowar" "<Cloned directory>\ABMoW\Data Files"
 
 #### OSX

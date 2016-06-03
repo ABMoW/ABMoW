@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document signature="Army Builder Data">
+  <linkset id="undeadFlag">
+    <link option="gnSpace" priority="412" index="0">
+      <live>gnTags.isFlagship</live>
+      </link>
+    <link option="gnHeader" name="{macro color1} -- Undead Admiral --{text 010101}" priority="413" index="1">
+      <live>gnTags.isFlagship</live>
+      </link>
+    <link option="liche" priority="415" index="2">
+      <exclref id="admiral"/>
+      </link>
+    <link option="necro" priority="416" index="3">
+      <exclref id="admiral"/>
+      </link>
+    <link option="tombking" priority="417" index="4">
+      <exclref id="admiral"/>
+      </link>
+    </linkset>
+  <linkset id="undeadCrew">
+    <link option="zombie" priority="210" rangemax="100" index="0">
+      <exclref id="unCrew"/>
+      </link>
+    <link option="skeleton" priority="211" rangemax="100" index="1">
+      <exclref id="unCrew"/>
+      </link>
+    <link option="wight" priority="212" rangemax="100" index="2">
+      <exclref id="unCrew"/>
+      </link>
+    </linkset>
+  <option id="necro" name="Necromancer" abbrev="" category="flagship" priority="0" cost="200">
+    <live>gnTags.isFlagship</live>
+    <evaluate>var x as number
+x = unit.assign[unCrew.necro]</evaluate>
+    </option>
+  <option id="tombking" name="Tomb King" abbrev="" category="flagship" priority="0" cost="50">
+    <autotag group="gnRoster" tag="canWizard"/>
+    <live>gnTags.isFlagship</live>
+    <evaluate>var x as number
+x = unit.assign[unCrew.tombking]</evaluate>
+    </option>
+  <option id="skelArchrs" name="Skeleton Archers" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <option id="skeleton" name="Skeletons" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
+    <evaluate>var x as number
+var n as number
+for n = 1 to unit.option[skeleton].selection
+x = unit.assign[unCrew.skeleton]
+next
+
+unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] + unit.tagcount[unCrew.wight]</evaluate>
+    </option>
+  <option id="wight" name="Wights" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
+    <evaluate>var x as number
+var n as number
+for n = 1 to unit.option[wight].selection
+x = unit.assign[unCrew.wight]
+next
+
+unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] + unit.tagcount[unCrew.wight]</evaluate>
+    </option>
+  <option id="zombie" name="Zombies" abbrev="" category="crew" priority="0" cost="0" textcost=" ">
+    <evaluate>var x as number
+var n as number
+for n = 1 to unit.option[zombie].selection
+x = unit.assign[unCrew.zombie]
+next
+
+unit.stat[crew] = unit.tagcount[unCrew.zombie] + unit.tagcount[unCrew.skeleton] + unit.tagcount[unCrew.wight]</evaluate>
+    </option>
+  <option id="liche" name="Liche" abbrev="" category="flagship" priority="0" cost="300">
+    <live>gnTags.isFlagship</live>
+    <evaluate>var x as number
+x = unit.assign[unCrew.liche]</evaluate>
+    </option>
+  <unit id="ghostship" name="Ghostship" description="Ghostship" cost="150." squadname="Ghostship" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="blwWater" value="4"/>
+    <statval stat="crew" value="0"/>
+    <statval stat="honours" value="5"/>
+    <statval stat="maxCrew" value="5"/>
+    <linkref id="undeadCrew"/>
+    <link option="skelArchrs" index="0"></link>
+    <tag group="race" tag="undead"/>
+    <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
+    </unit>
+  <unit id="necropolis" name="Floating Necropolis" description="Floating Necropolis" cost="250." squadname="Floating Necropolis" idtag="yes" statset="shipStats" maxsize="1" startsize="1">
+    <statval stat="blwWater" value="7"/>
+    <statval stat="crew" value="0"/>
+    <statval stat="honours" value="12"/>
+    <statval stat="maxCrew" value="8"/>
+    <linkref id="flagship"/>
+    <linkref id="undeadFlag"/>
+    <linkref id="undeadCrew"/>
+    <link option="skelArchrs" index="0"></link>
+    <tag group="race" tag="undead"/>
+    <tag group="Group" tag="MenOWar"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
+    </unit>
+  <unit id="skullram" name="Skullrammer" description="Skullrammers" cost="83.33333" textcost="250" squadname="Skullrammer Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="2"/>
+    <statval stat="crew" value="0"/>
+    <statval stat="honours" value="2"/>
+    <statval stat="maxCrew" value="3"/>
+    <linkref id="undeadCrew"/>
+    <tag group="race" tag="undead"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
+    </unit>
+  <unit id="zombieDrag" name="Zombie Dragon" description="Zombie Dragon" cost="75." idtag="yes" statset="flyerStats" maxsize="1" startsize="1">
+    <statval stat="honours" value="3"/>
+    <statval stat="move" value="15"/>
+    <statval stat="wounds" value="4"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="undead"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
+    </unit>
+  <unit id="carrion" name="Carrion" description="Carrion" cost="33.33333" textcost="100" squadname="Carrion Squadron" idtag="yes" statset="flyerStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="honours" value="1"/>
+    <statval stat="move" value="18"/>
+    <statval stat="wounds" value="2"/>
+    <tag group="Group" tag="Flyers"/>
+    <tag group="race" tag="undead"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]</prelinks>
+    </unit>
+  <unit id="deathship" name="Deathship" description="Deathships" cost="50." textcost="150" squadname="Deathship Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
+    <statval stat="blwWater" value="2"/>
+    <statval stat="crew" value="0"/>
+    <statval stat="honours" value="2"/>
+    <statval stat="maxCrew" value="3"/>
+    <linkref id="undeadCrew"/>
+    <tag group="race" tag="undead"/>
+    <tag group="Group" tag="ShipOTLine"/>
+    <prelinks>unit.stat[blwWtrS] = unit.stat[blwWater]*count[basic]
+unit.stat[maxCrewS] = unit.stat[maxCrew]*count[basic]</prelinks>
+    </unit>
+  <scripts></scripts>
+  <rule id="maxGhost" message="May only have one Ghostship for every Ship of the Line squadron" summary="Maximum Ghostships">
+    <test>roster.undead</test>
+    <valid><![CDATA[validif (tagcount[unitid.ghostship] <= this.tagcount[Group.ShipOTLine])]]></valid>
+    </rule>
+  <rule id="1Necropols" message="You must have a single Floating Necropolis" summary="One Floating Necropolis">
+    <test>roster.undead</test>
+    <valid>validif (tagcount[unitid.necropolis]=1)</valid>
+    </rule>
+  <rule id="tombwiz" message="If you have a Tomb King for an Admiral you must also purchase a wizard." summary="Wizard Required" scope="unit" targetid="necropolis">
+    <test>gnRoster.canWizard</test>
+    <valid>validif (usage[wizard] = 1)</valid>
+    </rule>
+  <rule id="maxCrew" message="Too many crew points used given the roster size and Admiral type" summary="Maximum Crew">
+    <test>roster.undead</test>
+    <valid><![CDATA[var maxpts as number
+var crewper500 as number
+if (overall.tagis[unCrew.liche] > 0) then
+  crewper500 = 15
+elseif (overall.tagis[unCrew.necro] > 0) then
+  crewper500 = 12
+elseif (overall.tagis[unCrew.tombking] > 0) then
+  crewper500 = 10
+else
+  crewper500 = 0
+endif
+
+maxpts = round(roster.usersize/500,0,-1)*crewper500
+
+@message = "Too many crew points used, fleet may only have a total of " & maxpts & " points worth of crew"
+
+validif ((overall.tagcount[unCrew.zombie] + overall.tagcount[unCrew.skeleton]*2 + overall.tagcount[unCrew.wight]*3) <= maxpts)]]></valid>
+    </rule>
+  <rule id="noCrew" message="Ship is unmanned, it will be considered abandoned." summary="No Crew" scope="unit" severity="warning">
+    <test>roster.undead</test>
+    <valid><![CDATA[var nleft as number
+nleft = count[basic]-stat[crew] 
+
+if (count[basic]>1) then
+@message = "At least " & nleft & " ship(s) in this squadron are unmanned. They will be considered abandoned."
+endif
+
+validif (stat[crew]>=count[basic])]]></valid>
+    </rule>
+  <statcalc id="mcrewPts" name="Allowed Crew Points">
+    <display>roster.undead</display>
+    <test/>
+    <calc><![CDATA[var maxpts as number
+var crewper500 as number
+if (overall.tagis[unCrew.liche] > 0) then
+  crewper500 = 15
+elseif (overall.tagis[unCrew.necro] > 0) then
+  crewper500 = 12
+elseif (overall.tagis[unCrew.tombking] > 0) then
+  crewper500 = 10
+else
+  crewper500 = 0
+endif
+
+maxpts = round(roster.usersize/500,0,-1)*crewper500
+
+@value = maxpts]]></calc>
+    </statcalc>
+  <statcalc id="ucrewPts" name="Used Crew Points" trimdecimals="yes">
+    <display>roster.undead</display>
+    <test/>
+    <calc>@value = (overall.tagcount[unCrew.zombie] + overall.tagcount[unCrew.skeleton]*2 + overall.tagcount[unCrew.wight]*3)</calc>
+    </statcalc>
+  </document>
