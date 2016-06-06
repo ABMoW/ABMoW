@@ -32,6 +32,32 @@
       </link>
     <live><![CDATA[gnTags.isFlagship & !ally.?  & ruleset.weRSailnRS]]></live>
     </linkset>
+  <linkset id="kustomKard">
+    <link option="gnSpace" priority="451" category="option" index="7"></link>
+    <link option="gnHeader" name="{macro color1} -- Kustom Kards --{text 010101}" priority="452" category="option" index="8"></link>
+    <link option="kkBeer" index="0">
+      <exclref id="kustomKard"/>
+      </link>
+    <link option="kkBigWhip" index="4">
+      <exclref id="kustomKard"/>
+      </link>
+    <link option="kkFanatics" index="6">
+      <exclref id="kustomKard"/>
+      </link>
+    <link option="kkGobbedoe" index="5">
+      <exclref id="kustomKard"/>
+      </link>
+    <link option="kkPntyBit" index="1">
+      <exclref id="kustomKard"/>
+      </link>
+    <link option="kkSquig" index="3">
+      <exclref id="kustomKard"/>
+      </link>
+    <link option="kkTrollPen" index="2">
+      <exclref id="kustomKard"/>
+      </link>
+    <live>ruleset.weRSailnRS</live>
+    </linkset>
   <option id="gobShaman" name="Goblin Shaman" abbrev="" category="crew" priority="424" cost="25" costtype="single">
     <live>ruleset.weRSailnRS</live>
     </option>
@@ -48,6 +74,13 @@
     <live>ruleset.weRSailnRS</live>
     </option>
   <option id="doomdiver" name="Goblin Doomdiver" abbrev="" category="antiflyer" priority="0" cost="25"></option>
+  <option id="kkBeer" name="Beer" abbrev="" category="option" priority="461" nature="free" cost="0"></option>
+  <option id="kkBigWhip" name="Big Whip" abbrev="" category="option" priority="462" cost="25"></option>
+  <option id="kkFanatics" name="Fanatics" abbrev="" category="option" priority="464" cost="50"></option>
+  <option id="kkGobbedoe" name="Gobbedoes" abbrev="" category="option" priority="465" cost="50"></option>
+  <option id="kkPntyBit" name="Pointy Bit" abbrev="" category="option" priority="466" cost="50"></option>
+  <option id="kkSquig" name="Squig Launchers" abbrev="" category="option" priority="463" cost="25"></option>
+  <option id="kkTrollPen" name="Troll Pens" abbrev="" category="option" priority="467" cost="50"></option>
   <unit id="bigchukka" name="Bigchukka" cost="25." textcost="75" squadname="Bigchukka Squadron" idtag="yes" statset="shipStats" minsize="3" maxsize="3" startsize="3">
     <statval stat="blwWater" value="1"/>
     <statval stat="crew" value="2"/>
@@ -72,6 +105,7 @@
     <linkref id="flagship"/>
     <linkref id="mowShaman"/>
     <linkref id="flagShaman"/>
+    <linkref id="kustomKard"/>
     <link option="doomdiver" index="0"></link>
     <tag group="race" tag="orcs"/>
     <tag group="Group" tag="MenOWar"/>
